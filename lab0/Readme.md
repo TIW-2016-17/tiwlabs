@@ -8,11 +8,11 @@ Installation and configuration tools for the development of the course can be do
 <!-- MarkdownTOC depth=3 -->
 
 - [Automatically](#automatically)
-  - [Step 1. Installation tools](#step-1.-installation-tools)
+  - [Step 1. Installation tools](#step-1-installation-tools)
   - [Step 2. Vagrant init](#step-2-vagrant-init)
   - [Step 3. Modify Vagrantfile](#step-3-modify-vagrantfile)
   - [Step 4. Start the image](#step-4-start-the-image)
-  - [Change of language](#Change-of-language)
+  - [Change of language](#change-of-language)
   - [Step 5. Configuración de eclipse y Glassfish/Payara Server](#paso-5-configuración-de-eclipse-y-glassfishpayara-server)
 - [Manual](#manual)
 
