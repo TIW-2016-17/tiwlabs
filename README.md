@@ -10,7 +10,7 @@ Curso 2016-2017
 <!-- MarkdownTOC depth=3 -->
 
 - [Introduction and purpose](#introduction-and-purpose)
-- [Index of labatories](#[index-of-labatories)
+- [Index of labatories](#[laboratories-index)
     - [Lab0. Enviroment configuration](#lab0-enviroment-configuration)
     - [Lab1. Web part](#lab1-web-part)
     - [Lab2. Persistence](#lab2-persistence)
