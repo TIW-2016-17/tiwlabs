@@ -1,13 +1,13 @@
-# Lab0. Configuración
+# Lab0. Configuration
 
-La instalación y configuración de las herramientas para el desarrollo de la asignatura puede realizarse de dos maneras: manual o automática.
+Installation and configuration tools for the development of the course can be done in two ways: manually or automatically.
 
-1. __Manual:__ útil si el alumno desea adquirir un conocimiento más profundo de las herramientas necesarias, o bien si precisa realizar una instalación limpia en su propio entorno.
-2. __Automática:__ Se proporciona una imagen con las herramientas ya instaladas. Esta opción es un "_ready-to-go_", que elimina imprecisiones a la hora de realizar una instalación manual. 
+1. __Manually:__ Useful if the student wishes to acquire a deeper knowledge of necessary, or if you need a clean installation tools in their own environment.
+2. __Automatically:__ An image is provided with the tools already installed. This option is a "_ready-to-go_" which eliminates inaccuracies when manual installation.
 
 <!-- MarkdownTOC depth=3 -->
 
-- [Automática](#automática)
+- [Automatically](#automatically)
   - [Paso 1. Instalación de herramientas](#paso-1-instalación-de-herramientas)
   - [Paso 2. Vagrant init](#paso-2-vagrant-init)
   - [Paso 3. Modificar el fichero Vagrantfile](#paso-3-modificar-el-fichero-vagrantfile)
@@ -19,35 +19,34 @@ La instalación y configuración de las herramientas para el desarrollo de la as
 <!-- /MarkdownTOC -->
 
 
-> Se muestra en primera instancia la instalación automática
+> Automatic installation shown in the first instance
 
 
-## Automática
+## Automatically
 
-### Paso 1. Instalación de herramientas
+### Step 1. Installation tools
 
-Para este escenario será necesario instalar las siguientes herramientas:
+For this scenario you need to install the following tools:
 
 - VirtualBox ([http://www.virtualbox.org](http://www.virtualbox.org))
 - Vagrant ([http://www.vagrantup.com](http://www.vagrantup.com)).
-- Git bash: ([http://git-scm.com](http://git-scm.com)) __Sólo en el caso de windows__
-- Opcional: VmWare, Parallels
-- Opcional pero recomendado en caso de usar VirtualBox:
-  - Tras la instalación de vagrant abrir una consola bash y escribir: `vagrant plugin install vagrant-vbguest`
+- Git bash: ([http://git-scm.com](http://git-scm.com)) __Only in the case of windows__
+- Optional: VmWare, Parallels
+- Optional but recommended in case of using VirtualBox
+  - After installing vagrant bash open a console and type: `vagrant plugin install vagrant-vbguest`
 
 ### Paso 2. Vagrant init
 
-- Una vez finalizada la instalación (en windows será necesario reiniciar)
-- Crea un directorio llamado _uc3mtiw_
-- Abre una consola de bash (Git bash en windows) y escribir el siguiente comando en ese directorio creado:
-
+- After the installation is finished (Windows will require a reboot)
+- Create a directory called _uc3mtiw_
+- Open a bash console  (Git bash in windows) and type the following command in the created directory :
 ```ruby
 vagrant init dpalomar/uc3mTiw
 ```
 
-### Paso 3. Modificar el fichero Vagrantfile
+### Paso 3. Modify Vagrantfile 
 
-Abrir el fichero generado (__Vagrantfile__) y descomentar la siguientes líneas de código:
+Open the generated file (__Vagrantfile__) and uncomment the following lines of code:
 
 ```ruby
 
@@ -60,34 +59,34 @@ Abrir el fichero generado (__Vagrantfile__) y descomentar la siguientes líneas 
    end
 ```
 
-__ATENCIÓN:__ Observa como en `vb.memory` se ha cambiado el valor de __1024__ a __2048__ Esto permitirá aumentar la memoria según la RAM de tu equipo.
+__ATENTION:__ Notice how in `vb.memory` has been changed the value of __1024__ to __2048__ This will increase the memory in the RAM on your computer.
 
-> Se recomienda usar 3072 o 4096. Procura nunca superar la mitad de la RAM de tu equipo.
+> We recommend using 3072 or 4096. Try never exceed half the RAM on your computer.
 
-### Paso 4. Arrancar la imagen
+### Paso 4. Start the image
 
-- Guarda los cambios en el fichero y cierra el editor.
-- Ejecuta nuevamente por la consola `vagrant up` y espera a que se levante la imagen de manera gráfica.
-- Una vez levantada, puedes entrar con el usuario __tiw__ _("Tecnologías informáticas para la web")_ y en el campo _password_ introduce __tiw__.
+- Save the changes to the file and close the editor.
+- Run again with the console by typing `vagrant up` and waits for the image graphically rises.
+- Once started, you can enter user __tiw__ _ ( "IT technologies for the Web") _ and in the field _password_ introduces __tiw__.
 
-> Si has salido de la imagen haciendo un shutdown, siempre puedes volver a iniciarla escribiendo de nuevo __Vagrant up__ desde el directorio donde se encuentra el fichero Vagrantfile
+> If you're out of the picture making a shutdown, you can always started again retyping __Vagrant up__ from the directory where is the file Vagrantfile
 
-### Cambio de idioma
+### Change of language
 
-El idioma del sistema por defecto es inglés americano, si quieres cambiar el idioma a español sigue los siguientes pasos:
+The default system language is American English, if you want to change the language to other follow these steps:
 
-1. click derecho en la barra inferior de la pantalla y selecciona _Add/Remove Panel Items_ ![](images/Imagen1.png)
-2. Pulsa el botón __Add__ ![](images/Imagen1-1.png)
-2. Selecciona _Keyboard layout handler_ ![](images/Imagen1-2.png) y acepta
-3. Click derecho en el icono de la bandera y _"Keyboard layout handler settings"_ ![](images/Imagen2.png)
-3. En el nuevo cuadro de diálogo sigue la imagen: ![](images/Imagen3.png)
-4. Busca en el cuadro que aparece el idioma _spain_ y click OK
-5. Regresando al cuadro anterior mueve el idioma _ES_ a la primera posición ![](images/Imagen4.png)
-6. Listo ya tienes traducido el sistema.
+1. Right click on the bottom bar of the screen and select _Add/Remove Panel Items_  ![](images/Imagen1.png)
+2. Press the button __add__ ![](images/Imagen1-1.png)
+2. Select _Keyboard layout handler_! [] (Images / Imagen1-2.png) and accepts
+3. Right click the flag icon and _"Keyboard layout handler settings"_ ![](images/Imagen2.png)
+3. In the new dialog follows the image: ![](images/Imagen3.png)
+4. Look in the box that appears your language and click OK
+5. Returning to the previous box moves the code language to the first position! [] (Images / Imagen4.png)
+6. You have already translated the system.
 
-### Paso 5. Configuración de eclipse y Glassfish/Payara Server
+### Step 5. Configure eclipse and Glassfish/Payara Server
 
-1. Abre Eclipse desde el  __menú inicio -> programming -> STS__
+1. Open Eclipse from  __menú inicio -> programming -> STS__
 2. Crea o acepta el directorio de trabajo (se recomienda llamarlo _workspace_ en un directorio con permisos).
 3. Pulsa con el botón derecho del ratón dentro de la pestaña _Servers_ y elige __New -> Server__ ![](images/Imagen5.png)
 4. Selecciona __Oracle -> Glassfish Tools__ y acepta. Comenzará la descarga tras aceptar una licencia
