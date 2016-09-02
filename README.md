@@ -9,21 +9,20 @@ Curso 2016-2017
 
 <!-- MarkdownTOC depth=3 -->
 
-- [Introduction and purpose](#introduccion-y-proposito)
-- [Index of labatories](#indice-de-laboratorios)
-    - [Lab0. Enviroment configuration](#lab0-configuracion-del-entorno)
-    - [Lab1. Web part](#lab1-parte-web)
-    - [Lab2. Persistence](#lab2-persistencia)
+- [Introduction and purpose](#introduction-and-purpose)
+- [Index of labatories](#[index-of-labatories)
+    - [Lab0. Enviroment configuration](#lab0-enviroment-configuration)
+    - [Lab1. Web part](#lab1-web-part)
+    - [Lab2. Persistence](#lab2-persistence)
     - [Lab3. EJB](#lab3-ejb)
     - [Lab4. CDI](#lab4-cdi)
     - [Lab5. JBoss Forge](#lab5-jboss-forge)
-    - [Lab6. REST Services](#lab6-servicios-rest)
+    - [Lab6. REST Services](#lab6-rest-services)
     - [Lab7. SpringBoot](#lab7-springboot)
-    - [Disclaimer](#disclaimer)
 
 <!-- /MarkdownTOC -->
 
-## Introduccion y proposito
+## Introduction and purpose
 
 This guide allows tracking of individual laboratories proposed for the subject.
 
