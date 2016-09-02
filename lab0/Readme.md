@@ -13,7 +13,7 @@ Installation and configuration tools for the development of the course can be do
   - [Step 3. Modify Vagrantfile](#step-3-modify-vagrantfile)
   - [Step 4. Start the image](#step-4-start-the-image)
   - [Change of language](#change-of-language)
-  - [Step 5. Configuración de eclipse y Glassfish/Payara Server](#paso-5-configuración-de-eclipse-y-glassfishpayara-server)
+  - [Step 5. Configure eclipse and Glassfish/Payara Server](#step-5-configure-eclipse-and-glassfishpayara-server)
 - [Manual](#manual)
 
 <!-- /MarkdownTOC -->
@@ -87,51 +87,49 @@ The default system language is American English, if you want to change the langu
 ### Step 5. Configure eclipse and Glassfish/Payara Server
 
 1. Open Eclipse from  __menú inicio -> programming -> STS__
-2. Crea o acepta el directorio de trabajo (se recomienda llamarlo _workspace_ en un directorio con permisos).
-3. Pulsa con el botón derecho del ratón dentro de la pestaña _Servers_ y elige __New -> Server__ ![](images/Imagen5.png)
-4. Selecciona __Oracle -> Glassfish Tools__ y acepta. Comenzará la descarga tras aceptar una licencia
-5. Cuando finalice la descarga aparecerá un diálogo indicando que es necesario reiniciar eclipse, pulsa __YES__.
-6. Repite el paso 3 y elige esta vez __Glassfish -> Glassfish4 -> Next__
-7. En el siguiente diálogo buscar esta ruta en:
+2. Create or accepts the working directory (it is recommended name it _workspace_ in a directory with permissions).
+3. Click the right mouse button within the tab _Servers_  and choose __new -> Server__ ![](images/Imagen5.png)
+4. Select __Oracle -> Glassfish Tools__ and accepts. will begin downloading after accepting a license
+5. When the download has finished a dialogue will appear indicating that you need to restart eclipse, press __YES__ .
+6. Repeat step 3 and select this time __Glassfish -> Glassfish4 -> Next__
+7. In the next dialog seek this route:
     8. __Glassfish location:__ /opt/glassfish/payara41/glassfish
     9. __Java Location:__ /usr/lib/jvm/java-8-oracle
     10. __Next__
     11. ![](images/Imagen6.png)
-10. En la sigiuente pantalla, escribe:
+10. In the next screen, write down:
     11. __Admin Name:__ admin
     12. __Admin Password:__ admin
     13. __Next__
 14. __Finish__
 
-#### Probando Glassfish
+#### Testing Glassfish
 
-> Vamos a probar que todo funcione:
+> Let's try it all work:
 
-1. Selecciona el servidor Glassfish y pulsa el botón verde (Start) ![](images/Imagen7.png)
-2. Cuando aparezca al lado del servidor _(Started/Synchronized)_ abre un navegador a la dirección __http://localhost:8080__ y verás la página de bienvenida de _Payara Server_
-3. Pulsa el botón rojo para detener el servidor
-4. Sal de eclipse/STS con __File->Exit__
-
+1. Select the Glassfish server and press the green button (Start) ![](images/Imagen7.png)
+2. When appears next to the server _(Started/Synchronized)_  open the following url in a browser: __http: // localhost: 8080__ and see you will see the  _Payara Server's_ welcome page
+3. Press the red button to stop the server
+4. Close eclipse/STS with __File-> Exit__
 ## Manual
 
-Para la instalación manual será necesario los siguientes pasos:
+For manual installation you will require the following steps:
 
-1. Instalar JDK8[^1]
-    2. Crear la variable de entorno *JAVA_HOME* apuntando al directorio _bin_ de la instalación
-2. Instalar maven[^2] 
-    3. Crear la variable de entorno *M2_HOME* apuntando al directorio _bin_ de maven
-3. Instalar Springsource ToolSuite[^3]
-4. Instalar MySQL[^4]
-    5. Usuario _root_ password _admin_
-5. Instalar MySqlWorkbench[^5]
-6. Instalar Payara Server[^6]
-    7. Usuario _admin_ password _admin_
-7. Instalar MySql ConnectorJ[^7]
-    8. Descomprimir y poner el fichero _mysql-connector-5.1.x-bin.jar_ en el directorio *$PAYARA_INSTALACION/glassfish/domains/domain1/lib*
-9. _Opcional:_ instalar Docker[^8]
+1. Install JDK8[^1]
+    2. Create the environment variable *JAVA_HOME* pointing to the installation _bin_ folder  
+2. Install maven[^2] 
+    3. Create the environment variable *M2_HOME* pointing to the maven _bin_ folder
+3. Install Springsource ToolSuite[^3]
+4. Install MySQL[^4]
+    5. User _root_ password _admin_
+5. Install MySqlWorkbench[^5]
+6. Install Payara Server[^6]
+    7. User _admin_ password _admin_
+7. Install MySql ConnectorJ[^7]
+    8. Unzip the file and put _mysql-connector-5.1.x-bin.jar_ in the directory *$PAYARA_INSTALACION/glassfish/domains/domain1/lib*
+9. _Opcional:_ install Docker[^8]
 
-> Se recomienda un mínimo de 3Gb RAM libres para poder funcionar correctamente.
-
+> A minimum of 3Gb free RAM is recommended in order to run it correctly.
 
 
 [^1]: 
