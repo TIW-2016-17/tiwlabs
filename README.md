@@ -35,7 +35,7 @@ At the end of the laboratories the student will have a thorough understanding of
 ## Laboratories index
 
 
-### Lab0. Environment Settings
+### [Lab0. Environment Settings](https://github.com/TIW-2016-17/tiwlabs/tree/master/lab0)
 
 In this first part is performed the configuration of the working environment
 
