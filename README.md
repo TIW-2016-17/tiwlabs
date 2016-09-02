@@ -10,7 +10,7 @@ Curso 2016-2017
 <!-- MarkdownTOC depth=3 -->
 
 - [Introduction and purpose](#introduction-and-purpose)
-- [Laboratories Index](#[laboratories-index)
+- [Laboratories index](#[laboratories-index)
     - [Lab0. Environment settings](#lab0-environment-settings)
     - [Lab1. Web part](#lab1-web-part)
     - [Lab2. Persistence](#lab2-persistence)
@@ -32,7 +32,7 @@ At the end of the laboratories the student will have a thorough understanding of
 
 > WARNING: The contents of these laboratories and guides does not replace in any way the theory, means a complement for the theoretical part.
 
-## Laboratories Index
+## Laboratories index
 
 
 ### Lab0. Environment Settings
