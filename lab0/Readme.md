@@ -127,12 +127,12 @@ For manual installation you will require the following steps:
     7. User _admin_ password _admin_
 7. Install MySql ConnectorJ[^7]
     8. Unzip the file and put _mysql-connector-5.1.x-bin.jar_ in the directory *$PAYARA_INSTALACION/glassfish/domains/domain1/lib*
-9. _Opcional:_ install Docker[^8]
+9. _Optional:_ install Docker[^8]
 
 > A minimum of 3Gb free RAM is recommended in order to run it correctly.
 
 
-[^1]: 
+[^1]: [http://www.oracle.com](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 [^2]: [http://maven.apache.org](http://maven.apache.org)
 [^3]: [http://spring.io/tools](http://maven.apache.org)
 [^4]: [http://www.mysql.com](http://www.mysql.com)
