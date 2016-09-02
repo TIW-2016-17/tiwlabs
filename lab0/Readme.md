@@ -33,7 +33,7 @@ For this scenario you need to install the following tools:
 - Git bash: ([http://git-scm.com](http://git-scm.com)) __Only in the case of windows__
 - Optional: VmWare, Parallels
 - Optional but recommended in case of using VirtualBox
-  - After installing vagrant bash open a console and type: `vagrant plugin install vagrant-vbguest`
+  - After installing vagrant open a bash console and type: `vagrant plugin install vagrant-vbguest`
 
 ### Step 2. Vagrant init
 
