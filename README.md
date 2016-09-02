@@ -9,7 +9,7 @@ Curso 2016-2017
 
 <!-- MarkdownTOC depth=3 -->
 
-- [Introduction and purpose](#introduccion-y-proposito)
+- [Introduction and purpose](#Introduction-and-purpose)
 - [Index of labatories](#indice-de-laboratorios)
     - [Lab0. Enviroment configuration](#lab0-configuracion-del-entorno)
     - [Lab1. Web part](#lab1-parte-web)
