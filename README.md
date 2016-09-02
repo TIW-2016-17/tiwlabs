@@ -1,76 +1,73 @@
-# Tecnologías informáticas para la web
+# Computing technologies for the web 
 
 
 ![](images/logo-uc3m.jpg)
 
-Universidad Carlos III de Madrid
+University Carlos III de Madrid
 
 Curso 2016-2017
 
 <!-- MarkdownTOC depth=3 -->
 
-- [Introduccion y proposito](#introduccion-y-proposito)
-- [Indice de laboratorios](#indice-de-laboratorios)
-    - [Lab0. Configuracion del entorno](#lab0-configuracion-del-entorno)
-    - [Lab1. parte Web](#lab1-parte-web)
-    - [Lab2. Persistencia](#lab2-persistencia)
+- [Introduction and purpose](#introduccion-y-proposito)
+- [Index of labatories](#indice-de-laboratorios)
+    - [Lab0. Enviroment configuration](#lab0-configuracion-del-entorno)
+    - [Lab1. Web part](#lab1-parte-web)
+    - [Lab2. Persistence](#lab2-persistencia)
     - [Lab3. EJB](#lab3-ejb)
     - [Lab4. CDI](#lab4-cdi)
     - [Lab5. JBoss Forge](#lab5-jboss-forge)
-    - [Lab6. Servicios REST](#lab6-servicios-rest)
+    - [Lab6. REST Services](#lab6-servicios-rest)
     - [Lab7. SpringBoot](#lab7-springboot)
     - [Disclaimer](#disclaimer)
 
 <!-- /MarkdownTOC -->
 
-## Introduccion y proposito
+## Introduction and purpose
 
-Esta guía permite el seguimiento de los distintos laboratorios propuestos para la asignatura.
+This guide allows tracking of individual laboratories proposed for the subject.
 
-Cada _laboratorio_ está contenido en su propia carpeta con instrucciones, ejemplos y ejercicios en algunos casos.
+Each _laboratory_ is contained in its own folder with instructions, examples and exercises in some cases.
 
-Al finalizar los laboratorios el alumno dispondrá de un conocimiento profundo de las tecnologías JEE y herramientas necesarias para construir arquitecturas complejas en este entorno.
+At the end of the laboratories the student will have a thorough understanding of JEE technologies and tools needed to build complex architectures in this environment.
 
-> ATENCIÓN: El contenido de estos laboratorios y guías no sustituye en modo alguno a la teoría y suponen un complemento de la parte teórica.
+> WARNING: The contents of these laboratories and guides does not replace in any way the theory, means a complement for the theoretical part.
 
-## Indice de laboratorios
+## Laboratories Index
 
 
-###  Lab0. Configuracion del entorno
+### Lab0. Environment Settings
 
-En esta primera parte se realiza la configuración del entorno de trabajo.
+In this first part is performed the configuration of the working environment
 
-###  Lab1. parte Web
+### Lab1. Web part
 
-Ejercicios y conceptos sobre el desarrollo con Servlets y JSPs, filtros y taglibs
+Exercises and concepts about development with Servlets and JSPs, filters and taglibs
 
-###  Lab2. Persistencia
+### Lab2. Persistence
 
-Ejercicios y ejemplos de uso de JPA vs JDBC
+Exercises and examples of the us of JPA vs
+JDBC 
+### Lab3. EJB
 
-###  Lab3. EJB
+The most basic uses of this type of project components and multicarrier shown.
 
-Se muestran los usos más básicos de este tipo de componentes y proyectos multimódulo.
+### Lab4. CDI
 
-###  Lab4. CDI
+An approach to the development model based on _inversión Control_ and news JEE7
 
-Una aproximación al modelo de desarrollo basado en _inversión de control_ y novedades JEE7
+### Lab5. JBoss Forge
 
-###  Lab5. JBoss Forge
+Once you know the model of development with JEE components in this laboratory is shown how to accelerate development with JBoss Forge tool.
 
-Una vez conocido el modelo de desarrollo con los componentes JEE, en este laboratorio se muestra como acelerar el desarrollo con la herramienta JBoss Forge.
+### Lab6. REST services
 
-###  Lab6. Servicios REST
+Sample exercises for such services.
 
-Ejercicios para la muestra de este tipo de servicios.
+### Lab7. SpringBoot
 
-###  Lab7. SpringBoot
+Samples of use and concepts under the SpringBoot tool microservices
 
-Muestras de uso y conceptos de microservicios bajo la herramienta SpringBoot
-
-### Disclaimer
-
-La documentación está generada con markdown y debido a un bug en una de las herramientas que permite generar las tablas de contenidos y volcado a html no admiten caracteres latinos como las tildes o eñes, por lo que se ha prescindido estos de los títulos de sección. 
 
 
 
