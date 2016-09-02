@@ -8,12 +8,12 @@ Installation and configuration tools for the development of the course can be do
 <!-- MarkdownTOC depth=3 -->
 
 - [Automatically](#automatically)
-  - [Paso 1. Instalación de herramientas](#paso-1-instalación-de-herramientas)
-  - [Paso 2. Vagrant init](#paso-2-vagrant-init)
-  - [Paso 3. Modificar el fichero Vagrantfile](#paso-3-modificar-el-fichero-vagrantfile)
-  - [Paso 4. Arrancar la imagen](#paso-4-arrancar-la-imagen)
-  - [Cambio de idioma](#cambio-de-idioma)
-  - [Paso 5. Configuración de eclipse y Glassfish/Payara Server](#paso-5-configuración-de-eclipse-y-glassfishpayara-server)
+  - [Step 1. Installation tools](#step-1.-installation-tools)
+  - [Step 2. Vagrant init](#step-2-vagrant-init)
+  - [Step 3. Modify Vagrantfile](#step-3-modify-vagrantfile)
+  - [Step 4. Start the image](#step-4-start-the-image)
+  - [Change of language](#Change-of-language)
+  - [Step 5. Configuración de eclipse y Glassfish/Payara Server](#paso-5-configuración-de-eclipse-y-glassfishpayara-server)
 - [Manual](#manual)
 
 <!-- /MarkdownTOC -->
@@ -35,7 +35,7 @@ For this scenario you need to install the following tools:
 - Optional but recommended in case of using VirtualBox
   - After installing vagrant bash open a console and type: `vagrant plugin install vagrant-vbguest`
 
-### Paso 2. Vagrant init
+### Step 2. Vagrant init
 
 - After the installation is finished (Windows will require a reboot)
 - Create a directory called _uc3mtiw_
@@ -44,7 +44,7 @@ For this scenario you need to install the following tools:
 vagrant init dpalomar/uc3mTiw
 ```
 
-### Paso 3. Modify Vagrantfile 
+### Step 3. Modify Vagrantfile 
 
 Open the generated file (__Vagrantfile__) and uncomment the following lines of code:
 
@@ -63,7 +63,7 @@ __ATENTION:__ Notice how in `vb.memory` has been changed the value of __1024__ t
 
 > We recommend using 3072 or 4096. Try never exceed half the RAM on your computer.
 
-### Paso 4. Start the image
+### Step 4. Start the image
 
 - Save the changes to the file and close the editor.
 - Run again with the console by typing `vagrant up` and waits for the image graphically rises.
