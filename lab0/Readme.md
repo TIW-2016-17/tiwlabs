@@ -59,7 +59,7 @@ Open the generated file (__Vagrantfile__) and uncomment the following lines of c
    end
 ```
 
-__ATENTION:__ Notice how in `vb.memory` has been changed the value of __1024__ to __2048__ This will increase the memory in the RAM on your computer.
+__ATENTION:__ Notice how `vb.memory` has been changed the value of __1024__ to __2048__ This will increase the memory in the RAM on your computer.
 
 > We recommend using 3072 or 4096. Try never exceed half the RAM on your computer.
 
