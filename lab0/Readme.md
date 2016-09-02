@@ -2,7 +2,7 @@
 
 Installation and configuration tools for the development of the course can be done in two ways: manually or automatically.
 
-1. __Manually:__ Useful if the student wishes to acquire a deeper knowledge of necessary, or if you need a clean installation tools in their own environment.
+1. __Manually:__ Useful if the student wishes to acquire a deeper knowledge of necessary, or if you need a clean installation tools in your own environment.
 2. __Automatically:__ An image is provided with the tools already installed. This option is a "_ready-to-go_" which eliminates inaccuracies when manual installation.
 
 <!-- MarkdownTOC depth=3 -->
