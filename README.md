@@ -10,8 +10,8 @@ Curso 2016-2017
 <!-- MarkdownTOC depth=3 -->
 
 - [Introduction and purpose](#introduction-and-purpose)
-- [Index of labatories](#[laboratories-index)
-    - [Lab0. Enviroment configuration](#lab0-enviroment-configuration)
+- [Laboratories Index](#[laboratories-index)
+    - [Lab0. Environment settings](#lab0-environment-settings)
     - [Lab1. Web part](#lab1-web-part)
     - [Lab2. Persistence](#lab2-persistence)
     - [Lab3. EJB](#lab3-ejb)
