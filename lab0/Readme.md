@@ -89,7 +89,7 @@ The default system language is American English, if you want to change the langu
 1. Open Eclipse from  __menú inicio -> programming -> STS__
 2. Create or accepts the working directory (it is recommended name it _workspace_ in a directory with permissions).
 3. Click the right mouse button within the tab _Servers_  and choose __new -> Server__ ![](images/Imagen5.png)
-4. Select __Oracle -> Glassfish Tools__ and accepts. will begin downloading after accepting a license
+4. Select __Oracle -> Glassfish Tools__ and click next to continue and begin downloading after accepting the license
 5. When the download has finished a dialogue will appear indicating that you need to restart eclipse, press __YES__ .
 6. Repeat step 3 and select this time __Glassfish -> Glassfish4 -> Next__
 7. In the next dialog seek this route:
