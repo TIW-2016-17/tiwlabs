@@ -67,7 +67,7 @@ __ATENTION:__ Notice how `vb.memory` has been changed the value of __1024__ to _
 
 - Save the changes to the file and close the editor.
 - Execute the command `vagrant up` in the console and waits until the graphical interface of the image starts.
-- Once started, you can enter user __tiw__ _ ( "IT technologies for the Web") _ and in the field _password_ introduces __tiw__.
+- Once started, you can enter user __tiw__  _("IT technologies for the Web")_ and in the field _password_ introduces __tiw__.
 
 > If you're out of the picture making a shutdown, you can always started again retyping __Vagrant up__ from the directory where is the file Vagrantfile
 
