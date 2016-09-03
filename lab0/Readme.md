@@ -124,7 +124,7 @@ For manual installation you will require the following steps:
 4. [Install MySQL][4]
     5. User _root_ password _admin_
 5. [Install MySqlWorkbench][5]
-6. [Install Payara Server[^6]
+6. [Install Payara Server][6]
     7. User _admin_ password _admin_
 7. [Install MySql ConnectorJ][7]
     8. Unzip the file and put _mysql-connector-5.1.x-bin.jar_ in the directory *$PAYARA_INSTALACION/glassfish/domains/domain1/lib*
@@ -133,11 +133,11 @@ For manual installation you will require the following steps:
 > A minimum of 3Gb free RAM is recommended in order to run it correctly.
 
 
-[1]: [http://www.oracle.com](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-[2]: [http://maven.apache.org](http://maven.apache.org)
-[3]: [http://spring.io/tools](http://maven.apache.org)
-[4]: [http://www.mysql.com](http://www.mysql.com)
-[5]: [http://www.mysql.com](http://www.mysql.com)
-[6]: [http://www.payara.fish/](http://www.payara.fish/)
-[7]: [http://www.mysql.com](http://www.mysql.com)
-[8]: [http://www.docker.com](http://www.docker.com)
+[1]: [http://www.oracle.com](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html]
+[2]: [http://maven.apache.org](http://maven.apache.org]
+[3]: [http://spring.io/tools](http://maven.apache.org]
+[4]: [http://www.mysql.com](http://www.mysql.com]
+[5]: [http://www.mysql.com](http://www.mysql.com]
+[6]: [http://www.payara.fish/](http://www.payara.fish/]
+[7]: [http://www.mysql.com](http://www.mysql.com]
+[8]: [http://www.docker.com](http://www.docker.com]
