@@ -111,6 +111,7 @@ The default system language is American English, if you want to change the langu
 2. When appears next to the server _(Started/Synchronized)_  open the following url in a browser: __http://localhost:8080__ and see you will see the  _Payara Server's_ welcome page
 3. Press the red button to stop the server
 4. Close eclipse/STS with __File-> Exit__
+
 ## Manual
 
 For manual installation you will require the following steps:
