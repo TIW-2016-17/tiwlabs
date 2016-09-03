@@ -116,11 +116,11 @@ The default system language is American English, if you want to change the langu
 
 For manual installation you will require the following steps:
 
-1. [Install JDK8](http://www.oracle.com])
+1. [Install JDK8](http://www.oracle.com)
     2. Create the environment variable *JAVA_HOME* pointing to the installation _bin_ folder  
-2. [Install maven](http://spring.io/tools](http://maven.apache.org)
+2. [Install maven](http://maven.apache.org)
     3. Create the environment variable *M2_HOME* pointing to the maven _bin_ folder
-3. [Install Springsource ToolSuite]((http://maven.apache.org)
+3. [Install Springsource ToolSuite](http://maven.apache.org)
 4. [Install MySQL](http://www.mysql.com)
     5. User _root_ password _admin_
 5. [Install MySqlWorkbench](http://www.mysql.com)
