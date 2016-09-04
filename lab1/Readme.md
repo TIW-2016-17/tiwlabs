@@ -73,49 +73,52 @@ You'll have already a project created.
 
 
 1. Open STS
-2. File -> Import -> Maven -> Existing Maven projects -> Next
-3. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratorios) -> Finish
-4. Open the maven's console  in the tab at the bottom  :
-5. ![](images/Imagen1.png)
+2. Open the maven's console  in the tab at the bottom  :
+3. ![](images/Imagen1.png)
+4. File -> Import -> Maven -> Existing Maven projects -> Next
+5. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratorios) -> Finish
 6. You will see how maven download all the necessary dependencies to configure the project .
 7. When finished you will see a structure created with the M of mave and the J of java
 8. ![](images/Imagen2.png)
 
 
-## Ejercicio1. HolaMundo
+## Exercise1. HelloWorld
 
-Vamos a iniciarnos en el desarrollo de Servlets con un primer ejemplo:
+Let's get started with the development of Servlets with a first example :
 
-1. Primero cambia la perspectiva:
-    2. Pulsa en la esquina superior derecha en el botón _Open perspective_ 
+
+
+1. First change the perspective :
+    2. Click on the upper right corner in the _Open perspective_ button
     3. ![](images/Imagen3.png)
-    4. Selecciona __Java EE__
+    4. Select __Java EE__
     5. ![](images/Imagen4.png)
-2. Click derecho sobre _laboratorios->Java Resources->src/main/java->es.uc3m.tiw_ y selecciona __New Package__
-3. Escribe el siguiente nombre de paquete: __es.uc3m.tiw.lab1__
-4. Sobre el nuevo paquete (_es.uc3m.tiw.lab1_) click derecho y selecciona __New -> Servlet__ y llámalo __Ejercicio1Servlet__
+2. Right click on _laboratorios->Java Resources->src/main/java->es.uc3m.tiw_ and select __New Package__
+3. Enter the following package name: __es.uc3m.tiw.lab1__
+4. On the new package (_es.uc3m.tiw.lab1_) right click and select __New -> Servlet__ and call it __Exercise1Servlet__
 5. ![](images/Imagen5.png)
-6. Cambia el __URL mapping__ en la siguiente pantalla:
+6. Change the __URL mapping__ in the following screen:
 7. ![](images/Imagen6.png)
-8. En la siguiente pantalla selecciona solamente el método __doGet__ y pulsa Finish
+8. On the next screen select only the __doGet__ method and click Finish
 9. ![](images/Imagen7.png)
-10. Elimina el código autogenerado dentro del método __doGet__ y escribe el siguiente:
+10. Remove the auto-generated code within the __doGet__ method and type the following :
 
 ```java
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("Hola");
+        out.println("Hi");
         out.close();
     }
 
 ```
 
-11. Salva los cambios e inicia el servidor Glassfish
-12. Click derecho sobre el proyecto __laboratorios__ y selecciona __Run As -> Run on Server__
-13. Selecciona el servidor __Glassfish__ en la siguiente pantalla, pulsa _Next_ y _Finish_
-14. Tras unos momentos se abrirá el navegador por defecto y verás un mensaje __Hello World__, pero ese no es el mensaje que hemos escrito:
-15. Escribe la siguiente url en el navegador: __http://localhost:8080/laboratorios/hola__ y verás el mensaje real.
-16. Acabas de finalizar el primer ejercicio.
+
+11. Save the changes and start the Glassfish server
+12. Right-click on the project __laboratorios__ and select __Run As -> Run on Server__
+13. Select the __Glassfish__ server on the next screen, click _Next_ and _Finish_
+14. After a few moments the default browser will open and you will see a message __Hello World__ , but that's not the message we have written:
+15. Enter the following URL in your browser: __http://localhost:8080/laboratorios/hi__ and see the actual message.
+16. You just finished the first year.
 
 ## Ejercicio2. Cabeceras
 
