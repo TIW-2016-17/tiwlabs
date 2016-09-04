@@ -184,16 +184,11 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise4. Parameters by POST
 
-1. Crea un nuevo servlet con nombre __Ejercicio4Servlet__
-2. __URL Mapping__: __/login__
-3. Selecciona __doPost__ y __doGet__
-4. Crea el código de un formulario que envíe los datos al servlet login. Hazlo dentro del método __doGet__
-
 1. Create a new servlet named __Exercise4Servlet__
 2. __URL Mapping__ : __/login__
 3. Select __doPost__ and __doGet__
 4. Create the code for a form that send data to the login servlet. Do it within the method __doGet__
-5. 
+
 ```html
     <form action="login" method="post">
         <fieldset>
