@@ -1,8 +1,8 @@
-# Lab 1. Desarrollo web
+# Lab 1. Web development
 
 <!-- MarkdownTOC -->
 
-- [Primer proyecto](#primer-proyecto)
+- [First project](#first-project)
 - [Ejercicio1. HolaMundo](#ejercicio1-holamundo)
 - [Ejercicio2. Cabeceras](#ejercicio2-cabeceras)
 - [Ejercicio3. Parametros](#ejercicio3-parametros)
@@ -17,34 +17,32 @@
 <!-- /MarkdownTOC -->
 
 
-## Primer proyecto
+## First project
 
-1. Abre una consola de comandos (__Ctrl+T__)
-2. Crea un directorio _tiwlabs_: (__mkdir tiwlabs__)
+1. Open a command console ( __Ctrl + Alt + t__ )
+2. Create a directory called _tiwlabs_ : ( __mkdir tiwlabs__ )
 3. __cd tiwlabs__
-4. Escribe el siguiente comando:
+4. Enter the following command :
 
 ```shell
   mvn archetype:generate -DarchetypeGroupId=org.codehaus.mojo.archetypes -DarchetypeArtifactId=webapp-javaee7
 ```
  
- Responde a las preguntas que aparecen de la siguiente manera (pulsa intro para pasar a la siguiente pregunta):
-
+Answer the questions that appear as follows (press enter to move to the next question):
 
         Define value for property 'groupId': : es.uc3m.tiw
         Define value for property 'artifactId': : laboratorios
-        Define value for property 'version':  1.0-SNAPSHOT: :  (intro para aceptar)
-        Define value for property 'package':  es.uc3m.tiw: :   (intro)
+        Define value for property 'version':  1.0-SNAPSHOT: :  (press Enter to accept)
+        Define value for property 'package':  es.uc3m.tiw: :   (Enter)
         Confirm properties configuration:
         groupId: es.uc3m.tiw
         artifactId: laboratorios
         version: 1.0-SNAPSHOT
         package: es.uc3m.tiw
-         Y: :  (Escribe Y y pulsa intro)
+         Y: :  (write Y and press Enter)
  
 
-
-Tras aparecer  el siguiente mensaje de éxito:
+After the following successful message appears :
 
 ```
 
@@ -68,18 +66,21 @@ Tras aparecer  el siguiente mensaje de éxito:
 
 ```  
 
-Ya tendrás un proyecto creado. 
 
-### Importar el proyecto en eclipse
+You'll have already a project created.
 
-1. Abre STS 
+### Import the project in eclipse
+
+
+1. Open STS
 2. File -> Import -> Maven -> Existing Maven projects -> Next
-3. Botón Browse. Localiza el proyecto generado (/home/tiw/tiwlabs/laboratorios) -> Finish
-4. Abre la consola de maven en la pestaña inferior: 
+3. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratorios) -> Finish
+4. Open the maven's console  in the tab at the bottom  :
 5. ![](images/Imagen1.png)
-6. Verás como maven descarga todas las dependencias necesarias para poder configurar el proyecto.
-7. Cuando termine verás una estructura creada con la M de maven y la J de java
+6. You will see how maven download all the necessary dependencies to configure the project .
+7. When finished you will see a structure created with the M of mave and the J of java
 8. ![](images/Imagen2.png)
+
 
 ## Ejercicio1. HolaMundo
 
