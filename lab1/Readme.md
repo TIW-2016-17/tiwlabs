@@ -3,16 +3,17 @@
 <!-- MarkdownTOC -->
 
 - [First project](#first-project)
-- [Exercise1. HellowWorld](#exercise1-helloworld)
-- [Exercise2. Cabeceras](#ejercicio2-cabeceras)
-- [Exercise3. Parametros](#ejercicio3-parametros)
-- [Exercise4. Parametros por POST](#ejercicio4-parametros-por-post)
-- [Exercise5. JSP](#ejercicio5-jsp)
-- [Exercise6. ServletConfig y atributos](#ejercicio6-servletconfig-y-atributos)
-- [Exercise7. Sesiones](#ejercicio7-sesiones)
-- [Exercise8. Filtro logger](#ejercicio8-filtro-logger)
-- [Exercise9. Filtros, Sesiones, Peticiones y Contexto](#ejercicio9-filtros-sesiones-peticiones-y-contexto)
-- [Exercise10. Taglibs, Lenguaje de Expresiones y dominios](#ejercicio10-taglibs-lenguaje-de-expresiones-y-dominios)
+- [Exercise1. HelloWorld](#exercise1-helloworld)
+- [Exercise2. Headers](#exercise2-headers)
+- [Exercise3. Parameters](#exercise3-parameters)
+- [Exercise4. Parameters by POST](#exercise4-parameters-by-post)
+- [Exercise5. JSP](#exercise5-jsp)
+- [Exercise6. ServletConfig and attributes](#exercise6-servletconfig-and-attributes)
+- [Exercise7. Sessions](#exercise7-sessions)
+- [Exercise8. Filter logger](#exercise8-filtro-logger)
+- [Exercise9. Filters, Sessions, Petitions and Context](#exercise9-filters-sessions-petitions-and-context)
+- [Exercise10. Taglibs, Expression Language and domains](#exercise10-taglibs-expression-language-and-domains)
+
 
 <!-- /MarkdownTOC -->
 
@@ -120,17 +121,19 @@ Let's get started with the development of Servlets with a first example :
 15. Enter the following URL in your browser: __http://localhost:8080/laboratorios/hi__ and see the actual message.
 16. You just finished the first year.
 
-## Ejercicio2. Cabeceras
+## Exercise2. Headers
 
 > Partimos de los conocimientos adquiridos en el ejercicio anterior. En esta ocasión vamos a extraer y mostrar toda la información que se encuentran en las cabeceras del cliente.
 
-> Primero arreglaremos un problema que aparece en la pestaña inferior _"Problems"_ indicando que la versión del proyecto usa java 1.7 y nosotros tenemos java 1.8 instalado.
+> We start from the knowledge acquired in the previous exercise. This time we are going to extract and display all the information found in the client's headers.
 
-- Abre la consola de eclipse: __Menu Window->Show View->Console__
-- En la pestaña console, muestra la consola de maven como hiciste en el ejercicio anterior.
-- Abre el fichero __pom.xml__ del proyecto laboratorios (_doble click sobre el fichero_)
-- En el editor que aparece haz clic sobre la __pestaña inferior pom.xml__ para ver el código fuente.
-- Localiza el siguiente código:
+> First we will fix a problem that appears at the bottom tab _"Problems "_ indicating that the project uses java version 1.7 and we have java 1.8 installed.
+
+- Open the eclipse console : __Menu Window->Show View->Console__
+- In the console tab, shows maven's console as you did in the previous exercise.
+- Open the file __pom.xml__ from the laboratories project (_double click on the file_)
+- In the editor that appears click on the __bottom tab pom.xml__ to see the source code.
+- Locate the following code
 
 ```xml
             <plugin>
@@ -147,30 +150,32 @@ Let's get started with the development of Servlets with a first example :
             </plugin>
 ```
 
-- Cambia los valores _source y target_ de 1.7 a 1.8
+- Change the values _source and target_ from 1.7 to 1.8
 
 ```xml
                     <source>1.8</source>
                     <target>1.8</target>
 ```
 
-- En este momento eclipse mostrará un error con un aspa roja.
-- Selecciona el proyecto laboratorios con el botón derecho del ratón y elige __Maven->Update Project->Ok__
-- Se eliminarán todos los errores y el proyecto estará configurado con JDK 1.8
-- Puedes cerrar el fichero pom.xml
 
->Ahora comenzaremos con el desarrollo del ejercicio.
+- Currently Eclipse will show an error with a red cross .
+- Select the Laboratories project with the right mouse button and select __Maven->Update Project->Ok__
+- all errors will be removed and the project will be configured with JDK 1.8
+- You can close the pom.xml
+
+> Now we begin with the development of the exercise.
 
 
-1. Crea un nuevo servlet en el paquete _es.uc3m.tiw.lab1_ que se llame __Ejercicio2Servlet__ 
-2. En el _URL mapping_ cambia el string por __cabeceras__
-3. Selecciona el método __doGet__
-4. Escribe el código necesario para sacar todas las cabeceras del cliente que se conecta con el navegador.
-5. Extrae también información relativa a su dirección de conexión, la url solicitada, el protocolo que ha usado, el servidor al que se ha conectado y el idioma usado.
+1. Create a new servlet named __Exercise2Servlet__ in the package _es.uc3m.tiw.lab1_
+2. In the _URL mapping_ change the string by __headers__
+3. Select the method __doGet__
+4. Write the needed code to get all headers from the client that connects to the browser code.
+5. Extract also information about their connection address , requested URL , the protocol used ,  the server to which they have been connected and the language used.
 
-> Para extraer toda esa información necesitarás la documentación del API servlet de Java en concreto ServletRequest [^1] y HttpServletRequest [^2]
+> To extract all the information you need API documentation Java servlet specifically [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html) and [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 
-## Ejercicio3. Parametros
+
+## Exercise3. Parametros
 
 > En esta ocasión vamos a reutilizar el código del ejercicio 1
 
@@ -182,7 +187,7 @@ Let's get started with the development of Servlets with a first example :
 
 > Para este ejercicio necesitarás la documentación de la clase HttpServletRequest[^2]
 
-## Ejercicio4. Parametros por POST
+## Exercise4. Parametros por POST
 
 1. Crea un nuevo servlet con nombre __Ejercicio4Servlet__
 2. __URL Mapping__: __/login__
@@ -214,7 +219,7 @@ Let's get started with the development of Servlets with a first example :
 
 > Documentación necesaria _HttpServletRequest_[^2]
 
-## Ejercicio5. JSP
+## Exercise5. JSP
 
 > Incorporar html dentro del propio servlet no es muy adecuado. En este ejercicio sacaremos el código html y lo serviremos desde páginas dinámicas.
 
@@ -228,7 +233,7 @@ Let's get started with the development of Servlets with a first example :
 
 > Con esto conseguimos separar la lógica de negocio de la presentación. Para Este ejercicio necesitarás la documentación de RequestDispatcher[^4]
 
-## Ejercicio6. ServletConfig y atributos
+## Exercise6. ServletConfig y atributos
 
 > En este ejercicio el servlet _LoginServlet_ cargará una lista de nombres de usuario en el método _init()_ y la hará disponible mediante el objeto _request_ a la página _listado.jsp_ que recorrerá la lista y pintará en una tabla los nombres de los usuarios.
 
@@ -237,9 +242,9 @@ Let's get started with the development of Servlets with a first example :
     3. Necesitarás modificar el objeto request para añadir atributos.
 4. En la página __listado.jsp__ recupera el atributo de la lista y escribe una tabla dinámica con los datos del ArrayList
 
-> Para este ejercicio necesitarás la documentación de ServletRequest [^1] en concreto `getAttribute` y `setAttribute`
+> Para este ejercicio necesitarás la documentación de [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html) en concreto `getAttribute` y `setAttribute`
 
-## Ejercicio7. Sesiones
+## Exercise7. Sesiones
 
 > El objetivo de este ejercicio es que el usuario no tenga que pasar una y otra vez por el formulario de login para acceder al listado de nombres si ya se ha autenticado.
 
@@ -250,7 +255,7 @@ Let's get started with the development of Servlets with a first example :
 
 > La documentación en este ejercicio será el API HttpSession[^5]
 
-## Ejercicio8. Filtro logger
+## Exercise8. Filtro logger
 
 > Vamos a crear un filtro que permita controlar y trazar todos los pasos del usuario. Reutilizaremos parte del código del servlet de las cabeceras.
 
@@ -274,7 +279,7 @@ Let's get started with the development of Servlets with a first example :
 26-08-2016 11:29:32 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratorios/cabeceras
 ```
 
-## Ejercicio9. Filtros, Sesiones, Peticiones y Contexto
+## Exercise9. Filtros, Sesiones, Peticiones y Contexto
 
 > Aunque permitimos que el usuario no necesite volver a pasar por el formulario de login mediante sesiones, eso no impide que un usuario que conozca la página _listado.jsp_ pueda acceder directamente a ella sin autenticarse. 
 > 
@@ -293,7 +298,7 @@ Let's get started with the development of Servlets with a first example :
 3. URL pattern: __/listado.jsp__
 4. Pon el código necesario en el método __doFilter__ para controlar si el usuario dispone de sesión para acceder, en caso contrario redirigirle al login.
 
-## Ejercicio10. Taglibs, Lenguaje de Expresiones y dominios
+## Exercise10. Taglibs, Lenguaje de Expresiones y dominios
 
 > En este ejercicio vamos a refactorizar nuestras vistas añadiendo Expression Language (__EL__)[^6] y usando Taglibs __JSTL__[^7] para mejorarlas.
 > También vamos a sacar los datos del array de usuarios para hacerlo más dinámico y funcional mediante una capa de objetos de dominio.
