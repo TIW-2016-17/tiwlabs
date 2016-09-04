@@ -216,17 +216,18 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise5. JSP
 
-> Incorporar html dentro del propio servlet no es muy adecuado. En este ejercicio sacaremos el código html y lo serviremos desde páginas dinámicas.
+> Incorporate html within the servlet itself is not very suitable .In this exercise we will extract the html code and serve it from dynamic pages.
 
-1. Crea una página JSP llamada __login.jsp__ dentro de __laboratories->Deployed Resources->webapp__ con __botón derecho->new->JSP File__
-2. Incopora el código html de la página _login.html_
-3. Crea dos páginas jsp más:
-    4. __listado.jsp__: contendrá el código que muestra el __Ejercicio4Servlet__ en caso de que exista el usuario
-    5. __error.jsp__: mostrará el mensaje de error actual del __Ejercicio4Servlet__
-6. Borra el código que has incorporado a las jsps del _Ejercicio4Servlet_ y susitúyelo por un _RequestDispatcher_ haciendo un __forward__
-7. Renombra el Ejercicio4Servlet a __LoginServlet__ (Pulsa con el botón derecho sobre la clase Ejercicio4Servlet y selecciona _Refactor->Rename_)
+1. Create a JSP page named __login.jsp__  within __laboratories->Deployed Resources->webapp__  with __botón right->New->JSP File__
+2. Incoporate the html code from the page _login.html_
+3. Create two more jsp pages:
+    4. __list.jsp__ : contain the code showing the __Exercise4Servlet__ if the user exists
+    5. __error.jsp__ : show the current error message __Exercise4Servlet__
+6. Delete the code you have incorporated into the _Exercise4Servlet_ jsps and replace it by a _RequestDispatcher_ making a __forward__
+7. Rename the _Exercise4Servlet_ to __LoginServlet__ (Click with the right button on the Exercise4Servlet class and select _Refactor- > Rename_ )
 
-> Con esto conseguimos separar la lógica de negocio de la presentación. Para Este ejercicio necesitarás la documentación de [RequestDispatcher](https://docs.oracle.com/javaee/7/api/javax/servlet/RequestDispatcher.html)
+> With this we achieve separate the business logic from the presentation. For this exercise you will need documentation from
+[RequestDispatcher](https://docs.oracle.com/javaee/7/api/javax/servlet/RequestDispatcher.html)
 
 ## Exercise6. ServletConfig y atributos
 
