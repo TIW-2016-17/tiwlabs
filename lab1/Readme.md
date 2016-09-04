@@ -182,7 +182,7 @@ Let's get started with the development of Servlets with a first example :
 
 > For this exercise you will need the documentation of the class [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 
-## Exercise4. Parametros por POST
+## Exercise4. Parameters by POST
 
 1. Crea un nuevo servlet con nombre __Ejercicio4Servlet__
 2. __URL Mapping__: __/login__
