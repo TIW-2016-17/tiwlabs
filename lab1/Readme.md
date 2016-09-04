@@ -229,16 +229,16 @@ Let's get started with the development of Servlets with a first example :
 > With this we achieve separate the business logic from the presentation. For this exercise you will need documentation from
 [RequestDispatcher](https://docs.oracle.com/javaee/7/api/javax/servlet/RequestDispatcher.html)
 
-## Exercise6. ServletConfig y atributos
+## Exercise6. ServletConfig and attributes
 
-> En este ejercicio el servlet _LoginServlet_ cargará una lista de nombres de usuario en el método _init()_ y la hará disponible mediante el objeto _request_ a la página _listado.jsp_ que recorrerá la lista y pintará en una tabla los nombres de los usuarios.
+> In this exercise _LoginServlet_ servlet will load a list of usernames in the _init(_) method and make it available through the _request_ object to the page _list.jsp_ that get through the list and print a table with the users names.
 
-1. Crear un `ArrayList` de tipo String en el método `init(ServletConfig config)` y llénalo con varios nombre de usuarios.
-2. Cuando el usuario sea válido envíale a la página de listado junto con los datos de usuario.
-    3. Necesitarás modificar el objeto request para añadir atributos.
-4. En la página __listado.jsp__ recupera el atributo de la lista y escribe una tabla dinámica con los datos del ArrayList
+1. Create an `ArrayList` of Strings in the `init(ServletConfig config)` method and fill it up with several users names.
+2. When the user will be valid send forward to the list page within the users data .
+  3. You will need to modify the request object to add attributes.
+4. On the __list.jsp__ page retrieves the attribute from the list and write in a dynamic table with the data from the ArrayList
 
-> Para este ejercicio necesitarás la documentación de [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html) en concreto `getAttribute` y `setAttribute`
+> For this exercise you will need documentation from [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html) in particular `getAttribute` and `setAttribute`
 
 ## Exercise7. Sesiones
 
