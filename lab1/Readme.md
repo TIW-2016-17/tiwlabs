@@ -32,12 +32,12 @@
 Answer the questions that appear as follows (press enter to move to the next question):
 
         Define value for property 'groupId': : es.uc3m.tiw
-        Define value for property 'artifactId': : laboratorios
+        Define value for property 'artifactId': : laboratories
         Define value for property 'version':  1.0-SNAPSHOT: :  (press Enter to accept)
         Define value for property 'package':  es.uc3m.tiw: :   (Enter)
         Confirm properties configuration:
         groupId: es.uc3m.tiw
-        artifactId: laboratorios
+        artifactId: laboratories
         version: 1.0-SNAPSHOT
         package: es.uc3m.tiw
          Y: :  (write Y and press Enter)
@@ -51,15 +51,15 @@ After the following successful message appears :
 [INFO] Using following parameters for creating project from Archetype: webapp-javaee7:1.1
 [INFO] ----------------------------------------------------------------------------
 [INFO] Parameter: groupId, Value: es.uc3m.tiw
-[INFO] Parameter: artifactId, Value: laboratorios
+[INFO] Parameter: artifactId, Value: laboratories
 [INFO] Parameter: version, Value: 1.0-SNAPSHOT
 [INFO] Parameter: package, Value: es.uc3m.tiw
 [INFO] Parameter: packageInPathFormat, Value: es/uc3m/tiw
 [INFO] Parameter: package, Value: es.uc3m.tiw
 [INFO] Parameter: version, Value: 1.0-SNAPSHOT
 [INFO] Parameter: groupId, Value: es.uc3m.tiw
-[INFO] Parameter: artifactId, Value: laboratorios
-[INFO] project created from Archetype in dir: /home/tiw/tiwlabs/laboratorios
+[INFO] Parameter: artifactId, Value: laboratories
+[INFO] project created from Archetype in dir: /home/tiw/tiwlabs/laboratories
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -77,7 +77,7 @@ You'll have already a project created.
 2. Open the maven's console  in the tab at the bottom  :
 3. ![](images/Imagen1.png)
 4. File -> Import -> Maven -> Existing Maven projects -> Next
-5. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratorios) -> Finish
+5. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratories) -> Finish
 6. You will see how maven download all the necessary dependencies to configure the project .
 7. When finished you will see a structure created with the M of mave and the J of java
 8. ![](images/Imagen2.png)
@@ -93,7 +93,7 @@ Let's get started with the development of Servlets with a first example :
     3. ![](images/Imagen3.png)
     4. Select __Java EE__
     5. ![](images/Imagen4.png)
-2. Right click on _laboratorios->Java Resources->src/main/java->es.uc3m.tiw_ and select __New Package__
+2. Right click on _laboratories->Java Resources->src/main/java->es.uc3m.tiw_ and select __New Package__
 3. Enter the following package name: __es.uc3m.tiw.lab1__
 4. On the new package (_es.uc3m.tiw.lab1_) right click and select __New -> Servlet__ and call it __Exercise1Servlet__
 5. ![](images/Imagen5.png)
@@ -114,10 +114,10 @@ Let's get started with the development of Servlets with a first example :
 
 
 11. Save the changes and start the Glassfish server
-12. Right-click on the project __laboratorios__ and select __Run As -> Run on Server__
+12. Right-click on the project __laboratories__ and select __Run As -> Run on Server__
 13. Select the __Glassfish__ server on the next screen, click _Next_ and _Finish_
 14. After a few moments the default browser will open and you will see a message __Hello World__ , but that's not the message we have written:
-15. Enter the following URL in your browser: __http://localhost:8080/laboratorios/hi__ and see the actual message.
+15. Enter the following URL in your browser: __http://localhost:8080/laboratories/hi__ and see the actual message.
 16. You just finished the first year.
 
 ## Exercise2. Headers
@@ -178,7 +178,7 @@ Let's get started with the development of Servlets with a first example :
 2. In the _URL mapping_ changes the string by __/parameters__
 2. Copy the code of exercise 1
 3. Create the needed code to the servlet that this time will print the message : _Hi name_ where _name_ it is dynamically inserted by *[Query_string](https://en.wikipedia.org/wiki/Query_string)*
-4. The access URL will be : `http://localhost:8080/laboratorios/parametros?nombre=John` In this case, the servlet will response : _Hi John_.
+4. The access URL will be : `http://localhost:8080/laboratories/parameters?name=John` In this case, the servlet will response : _Hi John_.
 
 > For this exercise you will need the documentation of the class [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 
@@ -218,7 +218,7 @@ Let's get started with the development of Servlets with a first example :
 
 > Incorporar html dentro del propio servlet no es muy adecuado. En este ejercicio sacaremos el código html y lo serviremos desde páginas dinámicas.
 
-1. Crea una página JSP llamada __login.jsp__ dentro de __laboratorios->Deployed Resources->webapp__ con __botón derecho->new->JSP File__
+1. Crea una página JSP llamada __login.jsp__ dentro de __laboratories->Deployed Resources->webapp__ con __botón derecho->new->JSP File__
 2. Incopora el código html de la página _login.html_
 3. Crea dos páginas jsp más:
     4. __listado.jsp__: contendrá el código que muestra el __Ejercicio4Servlet__ en caso de que exista el usuario
@@ -269,9 +269,9 @@ Let's get started with the development of Servlets with a first example :
 > Ahora al navegar normalmente verás por consola todos tus movimientos del tipo:
 
 ```
-26-08-2016 11:28:37 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratorios/login
-26-08-2016 11:28:50 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - POST - http://localhost8080/laboratorios/login
-26-08-2016 11:29:32 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratorios/cabeceras
+26-08-2016 11:28:37 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratories/login
+26-08-2016 11:28:50 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - POST - http://localhost8080/laboratories/login
+26-08-2016 11:29:32 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratories/cabeceras
 ```
 
 ## Exercise9. Filtros, Sesiones, Peticiones y Contexto
