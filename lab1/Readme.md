@@ -88,7 +88,6 @@ You'll have already a project created.
 Let's get started with the development of Servlets with a first example :
 
 
-
 1. First change the perspective :
     2. Click on the upper right corner in the _Open perspective_ button
     3. ![](images/Imagen3.png)
@@ -122,8 +121,6 @@ Let's get started with the development of Servlets with a first example :
 16. You just finished the first year.
 
 ## Exercise2. Headers
-
-> Partimos de los conocimientos adquiridos en el ejercicio anterior. En esta ocasión vamos a extraer y mostrar toda la información que se encuentran en las cabeceras del cliente.
 
 > We start from the knowledge acquired in the previous exercise. This time we are going to extract and display all the information found in the client's headers.
 
