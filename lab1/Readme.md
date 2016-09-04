@@ -170,17 +170,17 @@ Let's get started with the development of Servlets with a first example :
 > To extract all the information you need API documentation Java servlet specifically [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html) and [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 
 
-## Exercise3. Parametros
+## Exercise3. Parameters
 
-> En esta ocasión vamos a reutilizar el código del ejercicio 1
+> This time we are going to reuse the code of exercise 1
 
-1. Crea un nuevo servlet en el paquete _lab1_ que se llame __Ejercicio3Servlet__
-2. En el _URL mapping_ cambia la cadena por __/parametros__
-2. Copia el código del ejercicio 1
-3. Crea el código necesario para que ahora el servlet imprima el mensaje: _Hola nombre_ donde _nombre_ será dinámicamente insertado por *QUERY_STRING*[^3]
-4. La URL de acceso será: `http://localhost:8080/laboratorios/parametros?nombre=Juan` En este caso el servlet responderá: _Hola Juan_.
+1. Create a new servlet in the package _lab1_ called __Exercise3Servlet__
+2. In the _URL mapping_ changes the string by __/parameters__
+2. Copy the code of exercise 1
+3. Create the needed code to the servlet that this time will print the message : _Hi name_ where _name_ it is dynamically inserted by *[Query_string](https://es.wikipedia.org/wiki/Query_string)*
+4. The access URL will be : `http://localhost:8080/laboratorios/parametros?nombre=John` In this case, the servlet will response : _Hi John_.
 
-> Para este ejercicio necesitarás la documentación de la clase HttpServletRequest[^2]
+> For this exercise you will need the documentation of the class [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 
 ## Exercise4. Parametros por POST
 
