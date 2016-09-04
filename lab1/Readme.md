@@ -189,6 +189,11 @@ Let's get started with the development of Servlets with a first example :
 3. Selecciona __doPost__ y __doGet__
 4. Crea el código de un formulario que envíe los datos al servlet login. Hazlo dentro del método __doGet__
 
+1. Create a new servlet named __Exercise4Servlet__
+2. __URL Mapping__ : __/login__
+3. Select __doPost__ and __doGet__
+4. Create the code for a form that send data to the login servlet. Do it within the method __doGet__
+5. 
 ```html
     <form action="login" method="post">
         <fieldset>
@@ -205,14 +210,14 @@ Let's get started with the development of Servlets with a first example :
     </form>
 ```
 
-5. El servlet debe validar al usuario y clave enviado emitiendo una respuesta en caso favorable y otra en caso de error en el método__doPost__.
-    6. Las respuestas deben ser con cabecera __text/html__ y código formateado
-    7. El usuario válido es: __usuario1__ con __password1__
-    8. La respuesta válida debe saludar al usuario con su nombre de usuario
-    9. La respuesta inválida debe mostrar un mensaje indicando que no tiene acceso y un enlace para volver al formulario de login
+5. The servlet must validate the user and password, sending a positive response in a favourable case and another in case of error in the method __doPost__ .
+    6. Responses should be with __text/html__ header and formatted code
+    7. The user is valid : __user1__ with __password1__
+    8. The valid response should greet the user with their username
+    9. The invalid response should display a message indicating that they have no access and a link to return to the login form
 
 
-> Documentación necesaria _HttpServletRequest_[^2]
+> Necessary Documentation [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
 
 ## Exercise5. JSP
 
@@ -226,7 +231,7 @@ Let's get started with the development of Servlets with a first example :
 6. Borra el código que has incorporado a las jsps del _Ejercicio4Servlet_ y susitúyelo por un _RequestDispatcher_ haciendo un __forward__
 7. Renombra el Ejercicio4Servlet a __LoginServlet__ (Pulsa con el botón derecho sobre la clase Ejercicio4Servlet y selecciona _Refactor->Rename_)
 
-> Con esto conseguimos separar la lógica de negocio de la presentación. Para Este ejercicio necesitarás la documentación de RequestDispatcher[^4]
+> Con esto conseguimos separar la lógica de negocio de la presentación. Para Este ejercicio necesitarás la documentación de [RequestDispatcher](https://docs.oracle.com/javaee/7/api/javax/servlet/RequestDispatcher.html)
 
 ## Exercise6. ServletConfig y atributos
 
