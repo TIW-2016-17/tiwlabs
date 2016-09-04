@@ -3,16 +3,16 @@
 <!-- MarkdownTOC -->
 
 - [First project](#first-project)
-- [Ejercicio1. HolaMundo](#ejercicio1-holamundo)
-- [Ejercicio2. Cabeceras](#ejercicio2-cabeceras)
-- [Ejercicio3. Parametros](#ejercicio3-parametros)
-- [Ejercicio4. Parametros por POST](#ejercicio4-parametros-por-post)
-- [Ejercicio5. JSP](#ejercicio5-jsp)
-- [Ejercicio6. ServletConfig y atributos](#ejercicio6-servletconfig-y-atributos)
-- [Ejercicio7. Sesiones](#ejercicio7-sesiones)
-- [Ejercicio8. Filtro logger](#ejercicio8-filtro-logger)
-- [Ejercicio9. Filtros, Sesiones, Peticiones y Contexto](#ejercicio9-filtros-sesiones-peticiones-y-contexto)
-- [Ejercicio10. Taglibs, Lenguaje de Expresiones y dominios](#ejercicio10-taglibs-lenguaje-de-expresiones-y-dominios)
+- [Exercise1. HolaMundo](#ejercicio1-holamundo)
+- [Exercise2. Cabeceras](#ejercicio2-cabeceras)
+- [Exercise3. Parametros](#ejercicio3-parametros)
+- [Exercise4. Parametros por POST](#ejercicio4-parametros-por-post)
+- [Exercise5. JSP](#ejercicio5-jsp)
+- [Exercise6. ServletConfig y atributos](#ejercicio6-servletconfig-y-atributos)
+- [Exercise7. Sesiones](#ejercicio7-sesiones)
+- [Exercise8. Filtro logger](#ejercicio8-filtro-logger)
+- [Exercise9. Filtros, Sesiones, Peticiones y Contexto](#ejercicio9-filtros-sesiones-peticiones-y-contexto)
+- [Exercise10. Taglibs, Lenguaje de Expresiones y dominios](#ejercicio10-taglibs-lenguaje-de-expresiones-y-dominios)
 
 <!-- /MarkdownTOC -->
 
