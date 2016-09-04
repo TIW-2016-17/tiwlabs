@@ -124,7 +124,7 @@ Let's get started with the development of Servlets with a first example :
 
 > We start from the knowledge acquired in the previous exercise. This time we are going to extract and display all the information found in the client's headers.
 
-> First we will fix a problem that appears at the bottom tab _"Problems "_ indicating that the project uses java version 1.7 and we have java 1.8 installed.
+> First we will fix a problem that appears at the bottom tab _"Markers "_ indicating that the project uses java version 1.7 and we have java 1.8 installed.
 
 - Open the eclipse console : __Menu Window->Show View->Console__
 - In the console tab, shows maven's console as you did in the previous exercise.
@@ -154,10 +154,8 @@ Let's get started with the development of Servlets with a first example :
                     <target>1.8</target>
 ```
 
-
-- Currently Eclipse will show an error with a red cross .
 - Select the Laboratories project with the right mouse button and select __Maven->Update Project->Ok__
-- all errors will be removed and the project will be configured with JDK 1.8
+- All errors will be removed and the project will be configured with JDK 1.8
 - You can close the pom.xml
 
 > Now we begin with the development of the exercise.
