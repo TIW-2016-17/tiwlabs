@@ -177,7 +177,7 @@ Let's get started with the development of Servlets with a first example :
 1. Create a new servlet in the package _lab1_ called __Exercise3Servlet__
 2. In the _URL mapping_ changes the string by __/parameters__
 2. Copy the code of exercise 1
-3. Create the needed code to the servlet that this time will print the message : _Hi name_ where _name_ it is dynamically inserted by *[Query_string](https://es.wikipedia.org/wiki/Query_string)*
+3. Create the needed code to the servlet that this time will print the message : _Hi name_ where _name_ it is dynamically inserted by *[Query_string](https://en.wikipedia.org/wiki/Query_string)*
 4. The access URL will be : `http://localhost:8080/laboratorios/parametros?nombre=John` In this case, the servlet will response : _Hi John_.
 
 > For this exercise you will need the documentation of the class [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
