@@ -240,18 +240,18 @@ Let's get started with the development of Servlets with a first example :
 
 > For this exercise you will need documentation from [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html) in particular `getAttribute` and `setAttribute`
 
-## Exercise7. Sesiones
+## Exercise7. Sessions
 
-> El objetivo de este ejercicio es que el usuario no tenga que pasar una y otra vez por el formulario de login para acceder al listado de nombres si ya se ha autenticado.
+> The objective of this exercise is that the user does not have to use again and again the login form to access the list of names if he has already authenticated.
 
-1. Crea un `HttpSession` en el __LoginServlet__ y añade un token a la sesión con el valor `autenticado=true` si el usuario es correcto y `autenticado=false` en caso contrario
-2. LoginServlet debe controlar que si el usuario ya se ha autenticado puede acceder directamente o devolverle al formulario de login en caso contrario.
-    3. En este caso, añade un atributo _"mensaje"_ al request y dicho mensaje debe ser leído en la página _login.jsp_.
-    4. El mensaje debe poner que el usuario no es válido
+1. Create a `HttpSession` in __LoginServlet__ and adds a token to the session with the value `authenticated=true` if the user is correct and `authenticated=false` otherwise
+2. LoginServlet should check if the user has already authenticated can access directly or otherwise return to the login form.
+    3. In this case , add an attribute _"message"_ to the request and this message must be read in the _login.jsp_ page.
+    4. The message should show that the user is invalid
 
-> La documentación en este ejercicio será el API HttpSession[^5]
+> The documentation in this exercise will be the API [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html)
 
-## Exercise8. Filtro logger
+## Exercise8. Filter logger
 
 > Vamos a crear un filtro que permita controlar y trazar todos los pasos del usuario. Reutilizaremos parte del código del servlet de las cabeceras.
 
