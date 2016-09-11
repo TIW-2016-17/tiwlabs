@@ -277,11 +277,11 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise9. Filters, Sessions, Petitions and Context
 
-> Although we allow users do not need to go through the login form through sessions , that does not prevent a user who knows the  _listado.jsp_ page is able to access directly without authentication.
+> Although we allow users do not need to go through the login form through sessions , that does not prevent a user who knows the  _list.jsp_ page is able to access directly without authentication.
 >
-> So in this exercise it aims to control access to _listado.jsp_ page via a filter that checks if the user has the authentication token session.
+> So in this exercise it aims to control access to _list.jsp_ page via a filter that checks if the user has the authentication token session.
 >
-> __NOTE : __ Although the user can access directly to _listado.jsp_ page it will return a _NullPointerException_ because is unable to read the list of users that the _LoginServlet_ send by request . It is proposed to improve the code to control this error or incorporate the users list in the _context_ .
+> __NOTE : __ Although  authentificated users will be able to access directly to _list.jsp_ page it will return a _NullPointerException_ because is unable to read the list of users that the _LoginServlet_ send by request . It is proposed to improve the code to control this error or incorporate the users list in the _context_ .
 >
 > In this exercise you can see the differences between :
 > - Requests
