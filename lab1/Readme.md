@@ -296,7 +296,7 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise10. Taglibs, Expression Language and 
 
-> In this exercise we will refactor our views adding Expression Language (__[Expression Language](https://uel.java.net/)__) and using Taglibs __[JSP Standard Tag Library (JSTL)](https://jstl.java.net/)__  to improve them.
+> In this exercise we will refactor our views adding Expression Language (__[EL](https://uel.java.net/)__) and using Taglibs __[JSP Standard Tag Library (JSTL)](https://jstl.java.net/)__  to improve them.
 > We will also get data from the users array to make it more dynamic and functional with a layer of domain objects .
 
 1. Modify the code __login.jsp__ replacing all the java code by jstl and EL
