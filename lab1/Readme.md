@@ -258,9 +258,9 @@ Let's get started with the development of Servlets with a first example :
 1. Create a new package in `es.uc3m.tiw.lab1.filters`
 2. Create a new filter in the former package (New-> Filter)
 3. Called: __LoggerFilter__
-4. ![](images/Imagen9.png)
+4. ![](images/Imagen8.png)
 5. Press __next__ and on the next screen changes the _URL Pattern_ by __/*___ 
-6. ! [ ] ( Images / Imagen9.png )
+6. ![](images/Imagen9.png)
 7. __Next->Finish__
 8. Within the method ` doFilter` put the necessary code and finish it with `chain.doFilter(request,response)`
 
