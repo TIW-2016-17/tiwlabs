@@ -253,9 +253,6 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise8. Filter logger
 
-
-> Ahora al navegar normalmente verás por consola todos tus movimientos del tipo:
-
 > Let's create a filter that allows control and trace every  step of the user. We will reuse part of the code of exercise 2 servlet headers .
 
 1. Create a new package in `es.uc3m.tiw.lab1.filters`
