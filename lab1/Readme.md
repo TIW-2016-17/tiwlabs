@@ -294,41 +294,32 @@ Let's get started with the development of Servlets with a first example :
 3. URL pattern: __/listado.jsp__
 4. Add the necessary code in the __doFilter__ method to control whether the user has a session to access, otherwise redirect him/her to the login.
 
-## Exercise10. Taglibs, Lenguaje de Expresiones y dominios
+## Exercise10. Taglibs, Expression Language and 
 
-> En este ejercicio vamos a refactorizar nuestras vistas añadiendo Expression Language (__EL__)[^6] y usando Taglibs __JSTL__[^7] para mejorarlas.
-> También vamos a sacar los datos del array de usuarios para hacerlo más dinámico y funcional mediante una capa de objetos de dominio.
+> In this exercise we will refactor our views adding Expression Language (__[Expression Language](https://uel.java.net/)__) and using Taglibs __[JSP Standard Tag Library (JSTL)](https://jstl.java.net/)__  to improve them.
+> We will also get data from the users array to make it more dynamic and functional with a layer of domain objects .
 
-1. Modifica el código de __login.jsp__ sustituyendo todo el código java por jstl y EL
-2. Haz lo mismo con la página __listado.jsp__
-3. Crea una __clase java normal__ llamada __Usuario__ en un nuevo paquete _es.uc3m.tiw.lab1.dominios_ que tenga las siguiente propiedades y sus correspondientes métodos get/set:
+1. Modify the code __login.jsp__ replacing all the java code by jstl and EL
+2. Do the same with the __list.jsp__ page
+3. Create a __regular java class__ called __User__ in a new package _es.uc3m.tiw.lab1.domains_  that has the following properties and their corresponding get/set methods:
 
 ```java
-    String nombre;
-    String apellidos;
-    String usuario;
+    String name;
+    String surname;
+    String user;
     String password;
 
-    public String getNombre() {
+    public String getName() {
         return nombre;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
     ...
 ```
 
-4. Modifica el código del __LoginServlet__ para que ahora:
-    5. Contenga una lista de objetos Usuario ya creados
-    6. Que tenga una lógica nueva que permita acceder a cualquier usuario/password definidos en esa lista
-    7. Que pase al objeto usuario autenticado en sesión para que sea recibido por cualquier página a la que tenga acceso.
+4. Modify the code __LoginServlet__ so that now:
+    5. Contain a list of User objects already created
+    6. Have a new logic that allows access to any user/password defined on that list
+    7. Pass to the user object authenticated in session to be received by any page he/she have access.
 
-
-
-[^1]: [ServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html)
-[^2]: [HttpServletRequest](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServletRequest.html)
-[^3]: [Query_string](https://es.wikipedia.org/wiki/Query_string)
-[^4]: [RequestDispatcher](https://docs.oracle.com/javaee/7/api/javax/servlet/RequestDispatcher.html)
-[^5]: [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html)
-[^6]: [Expression Language](https://uel.java.net/)
-[^7]: [JSP Standard Tag Library (JSTL)](https://jstl.java.net/)
