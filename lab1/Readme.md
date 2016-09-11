@@ -275,7 +275,7 @@ Let's get started with the development of Servlets with a first example :
 26-08-2016 11:29:32 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratories/headers
 ```
 
-## Exercise9. Filtros, Sesiones, Peticiones y Contexto
+## Exercise9. Filters, Sessions, Petitions and Context
 
 > Aunque permitimos que el usuario no necesite volver a pasar por el formulario de login mediante sesiones, eso no impide que un usuario que conozca la página _listado.jsp_ pueda acceder directamente a ella sin autenticarse. 
 > 
@@ -289,10 +289,23 @@ Let's get started with the development of Servlets with a first example :
 > - filtros
 > - contexto
 
-1. Crea un nuevo filtro en el paquete _filters_
-2. Nombre: __SecurityFilter__
-3. URL pattern: __/listado.jsp__
-4. Pon el código necesario en el método __doFilter__ para controlar si el usuario dispone de sesión para acceder, en caso contrario redirigirle al login.
+
+> Although we allow users do not need to go through the login form through sessions , that does not prevent a user who knows the  _listado.jsp_ page is able to access directly without authentication.
+>
+> So in this exercise it aims to control access to _listado.jsp_ page via a filter that checks if the user has the authentication token session.
+>
+> __NOTE : __ Although the user can access directly to _listado.jsp_ page it will return a _NullPointerException_ because is unable to read the list of users that the _LoginServlet_ send by request . It is proposed to improve the code to control this error or incorporate the users list in the _context_ .
+>
+> In this exercise you can see the differences between :
+> - Requests
+> - Sessions
+> - Filters
+> - Context
+
+1. Create a new filter in the package _filters_
+2. Named it: __SecurityFilter__
+3. URL pattern: __ / listado.jsp__
+4. Add the necessary code in the __doFilter__ method to control whether the user has a session to access, otherwise redirect the user to the login.
 
 ## Exercise10. Taglibs, Lenguaje de Expresiones y dominios
 
