@@ -253,26 +253,29 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise8. Filter logger
 
-> Vamos a crear un filtro que permita controlar y trazar todos los pasos del usuario. Reutilizaremos parte del código del servlet de las cabeceras.
-
-1. Crea un nuevo paquete en `es.uc3m.tiw.lab1.filters` 
-2. Crea un nuevo Filtro en dicho paquete (New->Filter)
-3. Pon de Nombre: __LoggerFilter__
-4. ![](images/Imagen8.png)
-5. Pulsa __Next__ y en la siguiente pantalla cambia el _URL pattern_ por __/*__
-6. ![](images/Imagen9.png)
-7. __Next->Finish__
-8. Dentro del método `doFilter` pon el código necesario y termina con `chain.doFilter(request,response)`
-
-> El filtro debe mostrar por consola un registro de navegación del usuario del tipo: `<fecha> - <ip> - <protocolo> - <método> - <url> `. Un filtro avanzado registraría estos datos en un log del sistema, pero simplemente lo sacamos por consola por propósitos del laboratorio.
-
 
 > Ahora al navegar normalmente verás por consola todos tus movimientos del tipo:
+
+> Let's create a filter that allows control and trace every  step of the user. We will reuse part of the code of exercise 2 servlet headers .
+
+1. Create a new package in `es.uc3m.tiw.lab1.filters`
+2. Create a new filter in the former package (New-> Filter)
+3. Called: __LoggerFilter__
+4. ![](images/Imagen9.png)
+5. Press __next__ and on the next screen changes the _URL Pattern_ by __/*___ 
+6. ! [ ] ( Images / Imagen9.png )
+7. __Next->Finish__
+8. Within the method ` doFilter` put the necessary code and finish it with `chain.doFilter(request,response)`
+
+> The filter should show in the console user's browsing history like this : `<date> - <ip> - <protocol> - <method> - <url>` . An advanced filter would record these data in a system log , but we just print it in the console for laboratory purposes  .
+
+
+> Now when navigating normally you will see all your movements in the console in this way :
 
 ```
 26-08-2016 11:28:37 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratories/login
 26-08-2016 11:28:50 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - POST - http://localhost8080/laboratories/login
-26-08-2016 11:29:32 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratories/cabeceras
+26-08-2016 11:29:32 - 0:0:0:0:0:0:0:1 - HTTP/1.1 - GET - http://localhost8080/laboratories/headers
 ```
 
 ## Exercise9. Filtros, Sesiones, Peticiones y Contexto
