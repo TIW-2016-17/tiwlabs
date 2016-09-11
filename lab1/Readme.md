@@ -10,7 +10,7 @@
 - [Exercise5. JSP](#exercise5-jsp)
 - [Exercise6. ServletConfig and attributes](#exercise6-servletconfig-and-attributes)
 - [Exercise7. Sessions](#exercise7-sessions)
-- [Exercise8. Filter logger](#exercise8-filtro-logger)
+- [Exercise8. Filter logger](#exercise8-filter-logger)
 - [Exercise9. Filters, Sessions, Petitions and Context](#exercise9-filters-sessions-petitions-and-context)
 - [Exercise10. Taglibs, Expression Language and domains](#exercise10-taglibs-expression-language-and-domains)
 
