@@ -277,19 +277,6 @@ Let's get started with the development of Servlets with a first example :
 
 ## Exercise9. Filters, Sessions, Petitions and Context
 
-> Aunque permitimos que el usuario no necesite volver a pasar por el formulario de login mediante sesiones, eso no impide que un usuario que conozca la página _listado.jsp_ pueda acceder directamente a ella sin autenticarse. 
-> 
-> Por lo que en este ejercicio se propone controlar el acceso a la página _listado.jsp_ mediante un filtro que compruebe si el usuario dispone del token de autenticación en sesión.
-> 
-> __NOTA:__ aunque el usuario pueda acceder directamente al _listado.jsp_ esta página devolverá un _NullPointerException_ al no poder leer la lista de usuarios que el _LoginServlet_ le envía por request. Por lo que se propone como mejora del código controlar este error, o bien incorporar la lista de usuarios en _contexto_.
-> 
-> En este ejercicio se pueden apreciar las diferencias entre:
-> - peticiones (request)
-> - sesiones
-> - filtros
-> - contexto
-
-
 > Although we allow users do not need to go through the login form through sessions , that does not prevent a user who knows the  _listado.jsp_ page is able to access directly without authentication.
 >
 > So in this exercise it aims to control access to _listado.jsp_ page via a filter that checks if the user has the authentication token session.
