@@ -291,7 +291,7 @@ Let's get started with the development of Servlets with a first example :
 
 1. Create a new filter in the package _filters_
 2. Named it: __SecurityFilter__
-3. URL pattern: __ / listado.jsp__
+3. URL pattern: __/listado.jsp__
 4. Add the necessary code in the __doFilter__ method to control whether the user has a session to access, otherwise redirect the user to the login.
 
 ## Exercise10. Taglibs, Lenguaje de Expresiones y dominios
