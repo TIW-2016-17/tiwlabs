@@ -77,7 +77,7 @@ You'll have already a project created.
 2. Open the maven's console  in the tab at the bottom  :
 3. ![](images/Imagen1.png)
 4. File -> Import -> Maven -> Existing Maven projects -> Next
-5. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratories) -> Finish
+5. Browse button . Locate the generated project  (/home/tiw/tiwlabs/laboratories) and add project to working set (laboratories)-> Finish
 6. You will see how maven download all the necessary dependencies to configure the project .
 7. When finished you will see a structure created with the M of mave and the J of java
 8. ![](images/Imagen2.png)
