@@ -63,8 +63,8 @@ __INDEX__
 ### Create the code.
 
 1. __File->New->Other->EJB->Message Drive Bean__
-2. ![](images/Imagen5.png)
-3. ![](images/Imagen6.png)
+2. ![](images/ImagenEng5.png)
+3. ![](images/ImagenEng6.png)
 4. Create a new domain and name it `Message` mark it as  `@Entity` and set the following properties:
 
 ```java
