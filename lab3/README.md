@@ -1,106 +1,105 @@
 # Lab03. EJBs
 
-> En estos ejercicios se aprenderá lo básico para el trabajo con EJBs
+>In these exercises you will learn the basics for working with EJBs
 
-> La tecnología EJB siempre se ha mantenido separada del resto de módulos en la arquitectura JEE y aunque es una buena práctica en la versión __JEE7__ se permite el uso de EJBs dentro de proyectos web directamente y esta aproximación es lo que seguiremos en los siguientes ejercicios por simplicidad.
+> EJB technology has always been kept separate from other modules in the JEE architecture and although it is a good practice in the __JEE7 __ version EJBs is directly allowed in web projects and this approach is what we will continue in the following exercises for simplicity .
 > 
-> Si quieres ver un proyecto multimódulo puedes ver: [https://github.com/dpalomar/demoTIW/tree/master/demo](https://github.com/dpalomar/demoTIW/tree/master/demo).
+> If you want to see a multi-module project you can see: [https://github.com/dpalomar/demoTIW/tree/master/demo](https://github.com/dpalomar/demoTIW/tree/master/demo).
 > 
-> En este caso tienes que prestar especial atención a la sección `modules` dentro de los ficheros `pom.xml` de cada proyecto que es donde se realizan las relaciones entre módulos. Además para que eclipse pueda compilar, necesita encontrar el código de cada proyecto por lo que también hay que configurar el _Build path_ de eclipse para establecer las referencias.
+> In this case you have to pay special attention to the section `modules` within  `pom.xml` files from each project that is where relationships between modules are made. In addition eclipse needs to find the code for each project to compile so you also have to set the eclipse's _build path_ to set references.
 > 
 
-__INDICE__
+
+__INDEX__
 <!-- MarkdownTOC  depth=3 -->
 
-- [Ejercicio1. EJB SessionBean](#ejercicio1-ejb-sessionbean)
-- [Ejercicio2. JMS](#ejercicio2-jms)
-    - [Crear la Cola JMS en Glassfish](#crear-la-cola-jms-en-glassfish)
-    - [Crear el codigo.](#crear-el-codigo)
-- [Ejercicio3. Refactorizacion de la persistencia](#ejercicio3-refactorizacion-de-la-persistencia)
+- [Exercise1. EJB SessionBean](#exercise1-ejb-sessionbean)
+- [Exercise2. JMS](#exercise2-jms)
+    - [Create the JMS queue in Glassfish](#create-the-jms-queue-in-glassfish)
+    - [Create the code.](#create-the-code)
+- [Exercise3. Refactoring persistence](#exercise3-refactoring-persistence)
 
 <!-- /MarkdownTOC -->
 
 
-## Ejercicio1. EJB SessionBean
+## Exercise1. EJB SessionBean
 
-> Se propone la creación de un servicio simple para demostrar el uso de `SessionBeans`. El servicio recibirá un `String` con un nombre y devolverá una cadena con un saludo concatenando el nombre. el servicio será llamado por un `Servlet` mediante el método `GET`.
+> Creating a simple service is proposed to demonstrate the use of `SessionBeans` . The service will receive a `String` with a name and will return a string with a greeting by concatenating the name. the service will be called by a `Servlet` by the `GET` method.
 
-1. Crea una nueva estructura de paquetes:
+1. Create a new package structure:
 
 ```java
     es.uc3m.tiw.lab3
                   ..\ejbs
                   ..\servlets
 ```
-2. Abre el fichero __pom.xml__ y cambia en la pestaña __Dependencies__ `javaee-web-api-7.0` por `javaee-api-7.0` Acepta y Salva los cambios.
+2. Open the __pom.xml__ file and change the tab __Dependencies__ `javaee-web-api-7.0` by `javaee-api-7.0` Accept and Save changes.
 3. ![](images/Imagen1.png) 
-3. Dentro del paquete _ejbs_ crea un nuevo `SessionBean`  __File->New->Other->EJB->SessionBean__ y llámalo `SaludosBean`
+3. Inside the package _ejbs_ create a new `SessionBean`  __File->New->Other->EJB->SessionBean__  and call it `GreetingBean`
 4. ![](images/Imagen2.png)
-5. Agrega un nuevo método `public String saludar(String nombre)` tanto en el interfaz `local` como en el `bean` y en este último realiza su implementación.
-6. Pon como __nombre jndi__ `name="ServicioSaludos"`
-6. Crea un nuevo `es.uc3m.tiw.lab3.servlets.SaludosServlet` 
-    7. __Nombre:__ SaludosServlet
-    8. __URL Mapping:__ /bienvenida
-    9. __Métodos:__ doGet
-10. En el servlet utiliza la anotación `@EJB` para usar el servicio `SaludosBean`
-11. Recupera el parámetro _nombre_ que viene por GET 
-12. invoca el servicio con ese parámetro  y muestra el mensaje en el navegador.
-    13. La URL será: http://localhost:8080/laboratorios/bienvenida?nombre=xxx
+5. Add a new method `public String greet(String name)` both the  `local` interface and the `bean`  and the latter performs its implementation..
+6. Name it __name jndi__ `name="GreetService"`
+6. Create a new `es.uc3m.tiw.lab3.servlets.GreetServlet` 
+    7. __Name:__ GreetServlet
+    8. __URL Mapping:__ /welcome
+    9. __Methods:__ doGet
+10. In the servlet uses the notation  `@EJB`  to use the service `GreetingBean`
+11. Recalls the  _name_ parameter that comes through  GET 
+12. invokes the service with that parameter and displays the message in the browser.r.
+    13. The URL will be: http://localhost:8080/laboratories/welcome?name=xxx 
 
-> Para este ejercicio la documentación recomendada es el tutorial oficial de JEE7[^1]
+> For this exercise the recommended documentation is the official [tutorial EJBs](https://docs.oracle.com/javaee/7/tutorial/partentbeans.htm#BNBLR)
 
-## Ejercicio2. JMS
+## Exercise2. JMS
 
-### Crear la Cola JMS en Glassfish
+### Create the JMS queue in Glassfish
 
-1. abre la consola de administración de Glassfish/Payara
-2. Busca __JMS Resources->ConnectionFactories__
+1. opens the Glassfish/Payara's management console
+2. Find __JMS Resources->ConnectionFactories__
 3. ![](images/Imagen3.png)
-4. Ahora __JMS Resources ->Destination Resources__
+4. Now __JMS Resources ->Destination Resources__
 5. ![](images/Imagen4.png)
 
-### Crear el codigo.
+### Create the code.
 
 1. __File->New->Other->EJB->Message Drive Bean__
 2. ![](images/Imagen5.png)
 3. ![](images/Imagen6.png)
-4. Crea un nuevo dominio y llámalo `Mensaje` anótalo como `@Entity` y pon las siguientes propiedades:
+4. Create a new domain and name it `Message` mark it as  `@Entity` and set the following properties:
 
 ```java
     @Id
     @GeneratedValue(strategy = AUTO)
     private Long id;
-    private String mensaje;
+    private String message;
     @OneToOne
-    private Usuario from;
+    private User from;
     @OneToOne
-    private Usuario to;
+    private User to;
 ```
 
-5. Crea los correspondientes __DAOs__ para el `Mensaje` con dos métodos:
-    6. `findAllMessagesByUsuario(Usuario usuario)`: recuperará todos los mensajes para un usuario dado.
-    7. `createMensaje(Mensaje mensaje)`: persistirá el mensaje en la tabla `MENSAJES` con las referencias a las claves de los usuarios.
-8. Crea una clase `es.uc3m.tiw.lab3.util.EscribirEnCola` que permita mandar mensajes a la cola configurada anteriormente
-9. Crea un formulario de envío de mensajes y un servlet que reciba los parámetros cree un `Mensaje` e invoque a `EscribirEnCola`
+5. Create the corresponding __DAOs__ for the `Message` with two methods:
+    6. `findAllMessagesByUser(User user)`: will retrieve all messages for a given user.
+    7. `createMessage(Message message)`: the message will persist in the table `MESSAGES` with references to user passwords.
+8. Create a class `es.uc3m.tiw.lab3.util.WriteInQueue` that allows to send messages to the queue configured above
+9. Create a form for sending messages and receiving servlet parameters create a `Message` and invoke to `WriteInQueue`
 
-> El escenario es el siguiente:
-> - Un usuario escribe un mensaje a otro mediante el formulario.
-> - El servlet recibe los parámetros,crea el mensaje e invoca el servicio `EscribeEnCola` que envía el mensaje a la cola del servidor
-> - En cuanto llega el mensaje a la cola, el `LectorMensajesMDB` recibe automáticamente el mensaje (porque es un Listener)
-> - `LectorMensajesMDB` extrae el `Mensaje` y se lo pasa al `MensajesDAO` que lo escribe en una tabla.
-> - Fin.
+> The scenario is as follows:
+> - A user writes a message to another using the form.
+> - The servlet receives the parameters, creates the message and invokes the `WriteInQueue` service that sends the message to the server queue
+> -  As comes the message to the queue, the `MessageReaderMDB` automatically receives the message (because it is a Listener)
+> - `MessageReaderMDB` extract the `Message` and passes to `MessagesDAO` who writes it on a table.
+> - End.
 
-## Ejercicio3. Refactorizacion de la persistencia
+## Exercise3. Refactoring persistence
 
-> En este ejercicio se propone convertir todos los DAOs a EJBs de session.
-> Esto permitirá que los DAOs participen del entorno transaccional del servidor y por tanto no será necesario que usen el `UserTransaction`, tampoco tienen que esperar que los Servlets carguen el `EntityManager` ya que al ser EJBs puede usar la anotación `@PersistenceContext` directamente.
+> In this exercise, it is proposed to convert DAOs session to EJBs.
+> This will allow DAOs participate from the transactional server environment and therefore will not need to use the  `UserTransaction`, they neither have to wait that Servlets load the `EntityManager` since being EJBs can use the notation `@PersistenceContext` directly.
 > 
-> Por tanto, se propone al alumno la refactorización de los DAOs y convertirlos a `SessionBeans` locales 
-
-1. Modifica todos los DAOs para que usen anotaciones `@Local` y `@SessionBean` lo mismo para sus interfaces, siguiendo el procedimiento del primer ejercicio.
-2. Modifica su código para que ahora no necesiten el `UserTransaction`
-3. Modifica su código para que ahora invoquen ellos mismos el `EntityManager`
-4. Cambia el código de los servlets para que ahora invoquen los DAOs como `@EJB` sin necesidad de pasarles el EntityManager ni el UserTransaction.
+> Therefore, the student is proposed refactoring DAOs and convert them to local `SessionBeans`  
 
 
-[^1]: [Tutorial EJBs](https://docs.oracle.com/javaee/7/tutorial/partentbeans.htm#BNBLR)
+1. Modify  DAOs para to use annotations `@Local` and `@SessionBean` and the same for their interfaces,following the procedure of the first exercise.
+2. Modify your code so that now do not need the `UserTransaction`
+3. Modify your code so that now they call upon themselves the `EntityManager`
+4.  Change the code of the servlets to invoke now DAOs as `@EJB` without the need of passing the EntityManager neither the UserTransaction..
