@@ -2,7 +2,7 @@
 
 >In these exercises you will learn the basics for working with EJBs
 
-> EJB technology has always been kept separate from other modules in the JEE architecture and although it is a good practice in the __JEE7 __ version EJBs is directly allowed in web projects and this approach is what we will continue in the following exercises for simplicity .
+> EJB technology has always been kept separate from other modules in the JEE architecture and although it is a good practice in the __JEE7__ version EJBs is directly allowed in web projects and this approach is what we will continue in the following exercises for simplicity .
 > 
 > If you want to see a multi-module project you can see: [https://github.com/dpalomar/demoTIW/tree/master/demo](https://github.com/dpalomar/demoTIW/tree/master/demo).
 > 
