@@ -48,7 +48,7 @@ __INDEX__
 12. invokes the service with that parameter and displays the message in the browser.r.
     13. The URL will be: http://localhost:8080/laboratories/welcome?name=xxx 
 
-> For this exercise the recommended documentation is the official [tutorial EJBs](https://docs.oracle.com/javaee/7/tutorial/partentbeans.htm#BNBLR)
+> For this exercise the recommended documentation is the official [EJBs tutorial](https://docs.oracle.com/javaee/7/tutorial/partentbeans.htm#BNBLR)
 
 ## Exercise2. JMS
 
