@@ -30,12 +30,13 @@ public class User {
 		this.user = user;
 		this.password = password;
 	}
-	public String getNombre() {
+	public String getName() {
 		return name;
 	}
-	public void setNombre(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getLastName() {
 		return lastName;
 	}
