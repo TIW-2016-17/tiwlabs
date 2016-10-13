@@ -4,7 +4,7 @@
 > - An initial and more classic as it is __JDBC__
 > - A second and more oriented to JEE as __JPA__
 >
-> Requirements: Having a relational database installed base.
+> Requirements: Having a relational database installed.
 
 
 <!-- MarkdownTOC depth=3 -->
