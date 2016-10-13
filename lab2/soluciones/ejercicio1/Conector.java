@@ -3,6 +3,7 @@
  */
 package es.uc3m.tiw.lab2;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,26 +18,26 @@ import javax.sql.DataSource;
  * @author David Palomar
  *
  */
-public class Conector {
-private static Conector conector = new Conector();
+public class Connector {
+private static Connector connector = new Connector();
 	
-	private  Conector() {
+	private  Connector() {
 
 	}
-	public static Conector getInstance(){
-		if (conector == null) {
-			conector = new Conector();
+	public static Connector getInstance(){
+		if (connector == null) {
+			connector = new Connector();
 		}
-		return conector;
+		return connector;
 	}
 
-	public Connection crearConexionMySQL(ResourceBundle propiedades){
+	public Connection crearConexionMySQL(ResourceBundle properties){
 		
-		String bbdd = propiedades.getString("bbdd");
-		String driver = propiedades.getString("driver");
-		String usuario = propiedades.getString("usuario");
-		String clave = propiedades.getString("clave");
-		String esquema = propiedades.getString("esquema");
+		String bbdd = properties.getString("bbdd");
+		String driver = properties.getString("driver");
+		String usuario = properties.getString("user");
+		String clave = properties.getString("password");
+		String esquema = properties.getString("escheme");
 		
 		Connection con = null;
 		try {
@@ -56,12 +57,12 @@ private static Conector conector = new Conector();
 		
 		return con;
 	}
-	public Connection crearConexionMySQLConJNDI(ResourceBundle propiedades){
+	public Connection createConnectionMySQLWithJNDI(ResourceBundle properties){
 		DataSource datasource = null;
 		Connection con=null;
 		try {
 			Context ctx = new InitialContext();
-			datasource = (DataSource) ctx.lookup(propiedades.getString("datasource"));
+			datasource = (DataSource) ctx.lookup(properties.getString("datasource"));
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,10 +77,10 @@ private static Conector conector = new Conector();
 		return con;
 	}
 	
-	public Connection crearConexionOracle(ResourceBundle propiedades){
+	public Connection createConnectionOracle(ResourceBundle properties){
 		return null;
 	}
-	public Connection crearConexionMSSQL(ResourceBundle propiedades){
+	public Connection createConnectionMSSQL(ResourceBundle properties){
 		return null;
 	}
 }
