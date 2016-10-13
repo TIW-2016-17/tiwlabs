@@ -22,18 +22,18 @@ import es.uc3m.tiw.lab2.daos.UsuarioDAOImpl;
 /**
  * Servlet implementation class UsuarioServlet
  */
-@WebServlet("/usuario")
-public class UsuarioServlet extends HttpServlet {
+@WebServlet("/user")
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ServletConfig config;
-	private UsuarioDAO dao;
+	private UserDAO dao;
 	private Connection con;
-	private static final String ALTA="ALTA",EDITAR="EDITAR",BORRAR="BORRAR";
+	private static final String ADD="ADD",EDIT="EDIT",DELETE="DELETE";
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UsuarioServlet() {
+    public UserServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,13 +43,13 @@ public class UsuarioServlet extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		this.config = config;
-		String configuracion = (String)config.getServletContext().getInitParameter("configuracion");
+		String configuracion = (String)config.getServletContext().getInitParameter("configuration");
 		ResourceBundle rb = ResourceBundle.getBundle(configuracion);
-		Conector conector = Conector.getInstance();
+		Connector connector = Connector.getInstance();
 		//con = conector.crearConexionMySQL(rb);
-		Connection con = conector.crearConexionMySQLConJNDI(rb);
-		dao = new UsuarioDAOImpl();
-		dao.setConexion(con);
+		Connection con = connector.createConnectionMySQLWithJNDI(rb) ;
+		dao = new UserDAOImpl();
+		dao.setConnection(con);
 		dao.setQuerys(rb);
 	}
 
@@ -71,22 +71,22 @@ public class UsuarioServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String accion = request.getParameter("accion");
 
-			String pagina = null;
+			String page = null;
 		
-			if (accion.equals(ALTA)) {
-				pagina = "/altausuario.jsp";
+			if (accion.equals(ADD)) {
+				page = "/adduser.jsp";
 				
-			}else if (accion.equals(EDITAR)) {
-				Usuario usuario = recuperarDatosUsuario(request);
-				request.setAttribute("usuario", usuario);
-				pagina = "/editarusuario.jsp";
+			}else if (accion.equals(EDIT)) {
+				User user = getUserData(request);
+				request.setAttribute("user", user);
+				page = "/edituser.jsp";
 				
-			}else if (accion.equals(BORRAR)) {
-				Usuario usuario = recuperarDatosUsuario(request);
-				pagina = "/login.jsp";
-				borrarUsuario(usuario);
+			}else if (accion.equals(DELETE)) {
+				User user = getUserData(request);
+				page = "/login.jsp";
+				deleteUser(user);
 			}
-			config.getServletContext().getRequestDispatcher(pagina).forward(request, response);
+			config.getServletContext().getRequestDispatcher(page).forward(request, response);
 	}
 
 	/**
@@ -94,12 +94,12 @@ public class UsuarioServlet extends HttpServlet {
 	 * @param request
 	 * @return
 	 */
-	private Usuario recuperarDatosUsuario(HttpServletRequest request) {
-		Usuario usuario = new Usuario();
-		usuario.setId(Integer.parseInt(request.getParameter("id")));
-		usuario.setNombre(request.getParameter("nombre"));
-		usuario.setPassword(request.getParameter("password"));
-		return usuario;
+	private User getUserData(HttpServletRequest request) {
+		User user = new User();
+		user.setId(Integer.parseInt(request.getParameter("id")));
+		user.setName(request.getParameter("name"));
+		user.setPassword(request.getParameter("password"));
+		return user;
 	}
 
 	/**
@@ -109,18 +109,18 @@ public class UsuarioServlet extends HttpServlet {
 		String accion = request.getParameter("accion");
 		HttpSession sesion = request.getSession();
 		String pagina = "/login.jsp";
-		if ((sesion.getAttribute("autenticado").toString()).equalsIgnoreCase("true")) {
+		if ((sesion.getAttribute("authenticate").toString()).equalsIgnoreCase("true")) {
 			
-			pagina = "/formulario?nombre=root&clave=admin";
+			pagina = "/form?name=root&key=admin";
 		
-		if (accion.equalsIgnoreCase(ALTA)) {
-			Usuario usuario = new Usuario();
-			usuario.setNombre(request.getParameter("nombre"));
-			usuario.setPassword(request.getParameter("password"));
-			altaUsuario(usuario);
-		}else if (accion.equalsIgnoreCase(EDITAR)) {
-			Usuario usuario = recuperarDatosUsuario(request);
-			modificarUsuario(usuario);
+		if (accion.equalsIgnoreCase(ADD)) {
+			User user = new User();
+			user.setName(request.getParameter("name"));
+			user.setPassword(request.getParameter("password"));
+			addUser(user);
+		}else if (accion.equalsIgnoreCase(EDIT)) {
+			User user = getUserData(request);
+			updateUser(user);
 		 }
 		}
 		config.getServletContext().getRequestDispatcher(pagina).forward(request, response);
@@ -129,9 +129,9 @@ public class UsuarioServlet extends HttpServlet {
 	 * Modifica los datos del usuario con el UsuarioDao
 	 * @param usuario
 	 */
-	private void modificarUsuario(Usuario usuario){
+	private void updateUser(User user){
 		try {
-			dao.actualizarUsuario(usuario);
+			dao.updateUser(user);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -142,9 +142,9 @@ public class UsuarioServlet extends HttpServlet {
 	 * Borra los datos de un usuario con el UsuarioDao
 	 * @param usuario
 	 */
-	private void borrarUsuario(Usuario usuario){
+	private void deleteUser(User user){
 		try {
-			dao.borrarUsuario(usuario);
+			dao.deleteUser(user); 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -153,11 +153,11 @@ public class UsuarioServlet extends HttpServlet {
 	}
 	/**
 	 * Crea un usuario en la base de datos con el UsuarioDao
-	 * @param usuario
+	 * @param user
 	 */
-	private void altaUsuario(Usuario usuario){
+	private void addUser(User user){
 		try {
-			dao.crearUsuario(usuario);
+			dao.createUser(user);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
