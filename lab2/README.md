@@ -1,35 +1,36 @@
-# Lab2. Persistencia de objetos
+# Lab2. Object persistence
 
-> En estos ejercicios se muestran distintas alternativas para manejar la persistencia de los datos, en este caso, en un entorno relacional mediante dos alternativas:
-> - Una inicial y más clásica como es __JDBC__
-> - Una segunda y más orientada a JEE como es __JPA__
-> 
-> Requisitos: Disponer de una base de datos relacional instalada.
+> In these exercises is shown alternatives to handle persistent data, in this case, in a relational environment through two alternatives:
+> - An initial and more classic as it is __JDBC__
+> - A second and more oriented to JEE as __JPA__
+>
+> Requirements: Having a relational database installed base.
+
 
 <!-- MarkdownTOC depth=3 -->
 
-- [Ejercicio1.JDBC](#ejercicio1jdbc)
-- [Ejercicio2. JPA](#ejercicio2-jpa)
-    - [1. Convertir el proyecto a JPA](#1-convertir-el-proyecto-a-jpa)
-    - [2. Crear el codigo JPA](#2-crear-el-codigo-jpa)
-    - [3. Crear el DataSource](#3-crear-el-datasource)
-    - [4. Iniciar la aplicacion](#4-iniciar-la-aplicacion)
-- [Ejercicio3. Relaciones](#ejercicio3-relaciones)
-- [ANEXO:](#anexo)
-    - [Trabajo en Eclipse con JPA](#trabajo-en-eclipse-con-jpa)
+- [Exercise1.JDBC](#xercise1jdbc)
+- [Exercise2. JPA](#exercise2-jpa)
+    - [1. Convert the project to JPA](#1-convert-the-project-to-jpa)
+    - [2. Create JPA code](#2-create-the-jpa-code)
+    - [3. Create the DataSource](#3-create-the-datasource)
+    - [4. Start the application](#4-start-the-application)
+- [Exercise3. Relations](#exercise3-relations)
+- [ANNEX:](#annex)
+    - [Work in Eclipse with JPA](#wrok-in-eclipse-with-jpa)
     - [JPA Designer](#jpa-designer)
 
 <!-- /MarkdownTOC -->
 
 
-## Ejercicio1.JDBC
+## Exercise1.JDBC
 
-> Esto es un ejemplo más que un ejercicio para demostrar el uso de JDBC y su posterior comparación con JPA.
-> 
-> Observa el código de las soluciones para entender las explicaciones.
+> This is an example rather than an exercise to demonstrate the use of JDBC and subsequent comparison with JPA.
+>
+> Look at the code solutions to understand the explanations.
 
-1. Modificamos el dominio __Usuario__ para añadirle un campo nuevo `int id` que servirá para identificar la clave primaria
-2. Creamos una nueva estructura de paquetes:
+1. Modify the domain __User__ to add a new field `int id` which identifies the primary key
+2. Create a new package structure:
 
 ```
 es.uc3m.tiw
@@ -38,13 +39,13 @@ es.uc3m.tiw
             ../servlets
 ```
 
-3. En el paquete DAOs, incorporamos:
-    4.  Un _interfaz_ llamado __UsuarioDAO__ que definirá las operaciones 
-    5.  y una clase que implementa dicho interfaz que se llamará __UsuarioDAOImpl__ que contendrá las operaciones reales contra la base de datos.
+3. Incorporate in the package DAOs, :
+4. An _interface_ called __UserDAO__ that define operations
+    5. and a class that implements this interface to be called __UserDAOImpl__ that contain the actual operations against the database.
 
-> Si observas el código, este tiene los métodos básicos de un CRUD[^1] (altas, bajas y modificaciones), más un par de métodos para manejar las conexiones.
+> If you look at the code, it contains the basic methods of a [CRUD](https://en.wikipedia.org/wiki/CRUD) (add, delete and  modify), plus a couple of methods to handle connections.
 >
-> La clase __UsuarioDAOImpl__ tiene el código JDBC para insertar y recuperar datos de la base de datos (_Statement, PreparedStatement, ResultSet y Connection_)
+> The __UserDAOImpl__ class has the JDBC code to insert and retrieve data from the database (_Statement, PreparedStatement, ResultSet and Connection_)
 
 4. Creamos una clase nueva llamada __Conector__ y un fichero de texto plano: __persistencia.properties__
 
@@ -232,7 +233,7 @@ Eclipse proporciona una herramienta gráfica para manejar las entidades, pero no
 > __ATENCION:__ No borres directamente una entidad del diagrama pues borrará también el código original (opción cubo de basura o delete), si lo que quieres es simplemente eliminarla del diagrama selecciona la entidad y (selecciona el icono del diskette junto al cubo de basura, opción: save and remove from diagram) 
 
 
-[^1]: [CRUD](https://es.wikipedia.org/wiki/CRUD)
+
 [^2]: [Singleton](https://es.wikipedia.org/wiki/Singleton)
 [^3]: [DataSource](https://en.wikipedia.org/wiki/Datasource)
 [^4]: [ResourceBundle](https://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html)
