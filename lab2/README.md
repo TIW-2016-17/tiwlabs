@@ -47,63 +47,65 @@ es.uc3m.tiw
 >
 > The __UserDAOImpl__ class has the JDBC code to insert and retrieve data from the database (_Statement, PreparedStatement, ResultSet and Connection_)
 
-4. Creamos una clase nueva llamada __Conector__ y un fichero de texto plano: __persistencia.properties__
+4. Create a new class called __Connector__ and a plain text file: __persistence.properties__
 
-> La clase Conector gestiona las conexiones con varias bases de datos y utiliza un patrón Singleton[^2] para devolver una sola instancia. Para flexibilizar las conexiones con varias bases de datos de manera local o en remoto con un DataSource,[^3] esta clase hace uso de un fichero .properties
-> 
-> El fichero _persistencia.properties_ es invocado tanto por el Conector como por el DAO, lo que permite modificar valores de bases de datos, drivers, conexiones y sentencias sin tener que recompilar las clases, y se carga mediante el objeto ResourceBundle[^4]
-> 
+> The Connector class manages connections to multiple databases and uses a [Singleton pattern](https://en.wikipedia.org/wiki/Singleton) pattern to return a single instance. For make flexible connections to multiple databases locally or remotely with a  [DataSource](https://en.wikipedia.org/wiki/Datasource), this class makes use of a .properties file
+>
+> The _persistencie.properties_ file is invoked by both the connector and by the DAO, which allows modify values from databases, drivers, connections, and statements without recompiling classes, and it is loaded by the [ResourceBundle](https://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) object.
+>
 
-5. El __LoginServlet__ debe cambiar ahora su código eliminando la creación de la lista de usuarios en memoria y usar el DAO para sacar los usuarios directamente de la base de datos.
-    6. Para ello hace uso de la clase conector y pasa la conexión y el objeto ResourceBundle al DAO.
-    7. En el ejemplo el servlet recupera la conexión de un DataSource remoto, por lo que previamente habría que crearlo en el servidor.
+5. you must change the __LoginServlet__ code by eliminating the creation of the user list in memory and use DAO to take users directly from the database.
+    6. This connector uses the class and passes the connection and ResourceBundle object to the DAO.
+    7. In the example the servlet retrieves the connection of a remote DataSource, you should have to create it on the server previously.
 
-> Ya sólo nos queda crear la tabla __USUARIOS__ en el esquema de base de datos __tiw__ con las columnas emparejadas a las propiedades de la clase __Usuario__ para que todo funcione adecuadamente.
-> 
+> Now we only have to create the table __USERS__ in the database schema __tiw__ with columns matched to the properties of the __User__ class for everything to work properly.
+>
 
-6. Para finalizar, se propone la creación de la infraestructura necesaria para insertar  y modificar usuarios en dicha tabla, mediante unos formularios web. Para ello se necesitará:
-    7. Un nuevo Servlet: __UsuarioServlet__
-    8. Dos nuevas páginas: __altausuario.jsp__ y __editarusuario.jsp__
+6. Finally, is proposed to create the necessary infrastructure to insert and modify users in that table, using web forms. To do this you will need:
+    7. A new Servlet: __UserServlet__
+    8. Two new pages: __addUser.jsp__ and __editUser.jsp__
 
-> Ambas páginas envían los datos al mismo servlet y un campo oculto con un mensaje que informa al servlet sobre qué acción debe hacer: insertar o actualizar.
-> 
-> En las soluciones aportadas encontrarás que el código no es completamente funcional y está sin terminar, pero puedes hacerte una buena idea y si quieres puedes completarlo.
-> 
+> Both pages send data at the same servlet and a hidden field with a message that informs the servlet on what action to do: insert or update.
+>
+> In the solutions you will find that the code is not fully functional and is unfinished, but you can get a good idea and if you want you can complete it.
+>
 
-> Este escenario es un __MVC__ completo, donde los controladores (Servlets) reciben acciones, ejecutan lógica de negocio y redirigen a las nuevas vistas o trasladan las acciones a la capa de persistencia, las vistas se mantienen separadas de la base de datos y obtienen la información de los controladores.
+> This scenario is a complete __MVC__, where controllers (Servlets) receive actions, execute business logic and redirected to new views or move the actions to the persistence layer, the views are kept separate from the database and obtain the information from the controllers.
+
+## Exercise2. JPA
+
+> This time we will refactor the project to insert JPA.
+> Some disadvantages of JDBC are:
+>
+> - Workflow of the work is too rigid
+> - Prone to failures (sentences as strings, try-catch)
+> - Mix of technologies (OOP and SQL)
+> - Many infrastructure/complexity for simple sentences
+> - Required use external resources out of JDBC to improve work (patterns, ResourceBundles)
+> - Difficult perform object-relational mapping
+> - Low scalability
+>
+> For all this, it is recomended in projects to use an ORM framework.
 
 
-## Ejercicio2. JPA
+> __NOTE:__ In many projects is used an infrastructure based on modules, declaring a reusable module for persistence, which would need to create a new utility project and make the necessary settings for the web project incorporates the persistence as a library.
+On this occasion and for simplicity it is proposed to incorporate all laboratories persistence within the project as a package, remembering that is recommended what we discussed above.
 
-> En esta ocasión vamos a refactorizar el proyecto para insertar JPA.
-> Algunas desventajas de JDBC son:
-> 
-> - Workflow de trabajo demasiado rígido
-> - Propenso a fallos (sentencias como strings, try-catch)
-> - Mezcla de tecnologías (OO y SQL)
-> - Mucha infraestructura/complejidad para sentencias simples
-> - Necesario usar recursos externos a JDBC para mejorar el trabajo, (patrones, ResourceBundles)
-> - Difícil realizar un mapping Objeto-Relacional
-> - Baja escalabilidad
-> 
-> Por todo esto, en los proyectos se prefiere el uso de un framework ORM.
+### 1. Convert the project to JPA
 
->__NOTA:__ En muchos proyectos se usa una infraestructura basada en módulos, declarando un módulo reutilizable para la persistencia, lo que necesitaría crear un nuevo proyecto de tipo utilidad y realizar las configuraciones necesarias para que el proyecto web incorpore al proyecto persistencia como librería.
-En esta ocasión y por simplicidad se propone incorporar toda la persistencia dentro del propio proyecto laboratorios como un paquete más, siendo lo más indicado lo comentado anteriormente.
+> We will use the tools of eclipse that will facilitate the development with JPA.
 
-### 1. Convertir el proyecto a JPA
-
-> Para ayudarnos al desarrollo con JPA vamos a usar las herramientas de eclipse que nos facilitarán el desarrollo.
-
-1. click derecho sobre el proyecto laboratorios y elige: __Configure->convert to JPA project...__
-2. En el diálogo que aparece asegúrate de que Glassfish está seleccionado como Runtime
+1. Right click on the laboratories project and select : __Configure-> JPA project to convert ...__
+2. In the dialog that appears make sure that Glassfish is selected as Runtime
 3. ![](images/Imagen1.png)
-4. Pulsa __Next__ y pon los valores como aparecen en la siguiente pantalla:
+4. Press __Next__ and set the values as shown in the following screen:
 5. ![](images/Imagen2.png)
-6. Pulsa __Finish__ y se habrá generado un nuevo descriptor __persistence.xml__ dentro de un directorio __META-INF__ ábrelo con doble clic.
+6. Press __Finish__ and it will generate a new __persistence.xml__ descriptor within a __META-INF__ directory open it with double click.
 7. ![](images/Imagen3.png)
-8. En la ventana que aparece cambia estos valores:
-    9. __Name:__ laboratoriosPU
+
+
+8. In the window that appears change these values:
+    9. __name:__ laboratoriesPU
     10. __Persistence Provider:__ org.eclipse.persistence.jpa.PersistenceProvider
     11. __Managed classes:__ agrega el dominio usuario
 12. ![](images/Imagen4.png)
@@ -117,18 +119,35 @@ En esta ocasión y por simplicidad se propone incorporar toda la persistencia de
 20. ![](images/Imagen8.png)
 21. Guarda los cambios
 
-Deberías tener un código como el siguiente (pulsando sobre la _pestaña source_):
+
+8. In the window that appears change these values:
+    9. __name: __ laboratoriesPU
+    10. __Persistence Provider: __ org.eclipse.persistence.jpa.PersistenceProvider
+    11. __Managed classes: __ adds user domain
+12. ![](images/Imagen4.png)
+13. At the bottom of the editor changes the __Connection tab__ and applies the following values:
+14. ![](images/Imagen5.png)
+15. Switch to __options tab__ and modifies the value _Loggin level_ to __Fine__
+16. ![](images/Imagen6.png)
+17. In the __Schema Generation tab__ modify the value to __Create__
+18. ![](images/Imagen7.png)
+19. In the __Properties tab__ adds a new property as follows:
+20. ![](images/Imagen8.png)
+21. Save changes
+
+
+You should have a code like the following (by clicking on the _source tab_):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1"
     xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="laboratoriosPU"
+    <persistence-unit name="laboratoriesPU"
         transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>jdbc/tiw</jta-data-source>
-        <class>es.uc3m.tiw.lab1.dominios.Usuario</class>
+        <class>es.uc3m.tiw.lab1.domains.User</class>
         <properties>
             <property name="javax.persistence.schema-generation.database.action"
                 value="create" />
@@ -140,52 +159,64 @@ Deberías tener un código como el siguiente (pulsando sobre la _pestaña source
 </persistence>
 ```
 
-### 2. Crear el codigo JPA
+### 2. Create JPA code
 
 1. Modifica la clase `es.uc3m.tiw.lab1.dominios.Usuario` para que su código sea JPA
 2. Sustituye el código JDBC de la clase `es.uc3m.tiw.lab2.dominios.UsuarioDAOImpl` por código JPA para manejar la persistencia mediante un objeto __EntityManager__
 3. Modifica los servlet `es.uc3m.tiw.lab1.LoginServlet` y `es.uc3m.tiw.lab1.UsuarioServlet` para que usen ahora código JPA. Puedes obtener la unidad de persistencia de dos maneras:
-    - Por código: 
+
+
+1. Modify the class `es.uc3m.tiw.lab1.domains.User` to change your code to JPA
+2. Replace the JDBC code of the `es.uc3m.tiw.lab2.dominios.UserDAOImpl` class for JPA code to handle persistence by an  __EntityManager__ object
+3. Modify the servlet  ` es.uc3m.tiw.lab1.LoginServlet` and `es.uc3m.tiw.lab1.UserServlet` to use JPA code now. You can get the persistence unit in two ways:
+    - By code: 
     ```java
-    EntityManager em = Persistence.createEntityManagerFactory("laboratoriosPU").createEntityManager();`
+    EntityManager em = Persistence.createEntityManagerFactory("laboratoriesPU").createEntityManager();`
     ```
-    - Por anotaciones: 
+    - By annotations: 
 ```java
-    @PersistenceContext(unitName="laboratoriosPU")
+    @PersistenceContext(unitName="laboratoriesPU")
     private Entitymanager em;
 ```
 
-### 3. Crear el DataSource
+### 3. Create the DataSource
 
 > En el fichero _persistence.xml_ hemos usado la cadena `jdbc/tiw` como definición del DataSource de Glassfish que apunta a nuestra base de datos. Antes de continuar es necesario crear dicho recurso en el servidor Glassfish.
 
 1. Abre la consola de administración de Glassfish: [https://localhost:4848](https://localhost:4848). Usuario/password: admin/admin
 2. Crea el DataSource.
     3. Puedes usar la guía de referencia del material de clase.
+    
+    
+> In the _persistence.xml_ file we used the string `jdbc/tiw` as a definition of the Glassfish's DataSource that points to our database. Before proceeding you need to create that resource in the Glassfish server.
 
-### 4. Iniciar la aplicacion
+1. Open the management console of Glassfish: [https://localhost:4848](https://localhost:4848).  User/password: admin/admin
+2. Create the DataSource.
+    3. You can use the reference guide class material.
 
-1. Despliega la aplicación en el servidor Glassfish
-2. Observa en MySql como se ha creado una nueva tabla gracias a la estrategia `create`
+### 4. Start the application
+
+1. Deploy the application on the Glassfish server
+2. Notes that in MySql it has been created a new table thanks to the strategy `create`
 3. ![](images/Imagen9.png)
-3. El resto de la aplicación debería ser funcional y permitir crear nuevos usuarios, actualizarlos y borrarlos.
-    4. __NOTA:__ `create` creará las tablas si no existen y a continuación el servlet insertará los registros de usuarios de prueba, si piensas hacer pruebas y lanzar varias veces la aplicación, te devolverá una excepción porque los registros ya existen, para este caso es mejor usar `drop-and-create`.
+3. The test of the application should be functional and allow to create new users, update them and delete them.
+    4. __NOTE: __ `create` will create tables if they do not exist and next the servlet will insert the records of the test users, if you plan to test and launch several times the application, it will return an exception because the records already exist for this case it is better to use 'drop-and-create`.
 
-## Ejercicio3. Relaciones
+## Exercise3. Relations
 
-> En este ejercicio se propone la creación de relaciones 1-1 entre entidades.
+> In this exercise it is proposed to create relationships 1-1 between entities.
 
-1. Crea un nuevo dominio `es.uc3m.tiw.lab2.dominios.Direccion` con las siguientes propiedades:
-    2. `String calle;`
-    3. `int codigoPostal;`
-    4. `String ciudad;`
-    5. `String pais;`
-6. Establece la relación `OneToOne` entre Usuario y Direccion.
-7. Modifica el formulario de edición para que al editar un usuario se pueda agregar su dirección asociada.
-8. Crea un nuevo DireccionDAO y DireccionDAOImpl para manejar la persistencia de las direcciones
-9. Agrega la nueva lógica para manejar direcciones en los servlets
-10. Comprueba como se ha creado la nueva tabla `DIRECCIONES` junto a la `FOREIGN_KEY` en la tabla `USUARIOS`
-11. Edita un usuario en el formulario y comprueba como se almacenan los resultados en las tablas.
+1. Create a new domain `es.uc3m.tiw.lab2.domains.Address` with the following properties:
+    2. `String street;`
+    3. `int zipCode;`
+    4. `String city;`
+    5. `String country; '
+6. Set a `OneToOne` relationship between User and Address.
+7. Modify the edit so that when you edit a user it will be possible to add its associated address.
+8. Create a new AddressDAO and AddressDAOImpl to handle the persistence of addresses
+9. Add the new logic to handle addresses in the servlets
+10. Notes how a new  `ADDRESSES` table has been created within the  `FOREIGN_KEY` in the table  `USERS`
+11. Edit a user in the form and check how results are stored in tables.
 12. ![](images/Imagen10.png)
 
 > __Trabajo recomendado:__ Modifica el proyecto para incluir relaciones `OneToMany` y `ManyToMany`. Por ejemplo un usuario puede tener varias direcciones asociadas y una dirección puede ser compartida por varios usuarios.
@@ -194,11 +225,17 @@ Deberías tener un código como el siguiente (pulsando sobre la _pestaña source
 > 
 
 
-## ANEXO: 
+> __Recommended homework:__ Modify the project to include relationships `OneToMany` and `ManyToMany`. For example, a user can have multiple associated addresses and an address can be shared by multiple users.
+>
+> JPA includes many powerful features for working with data, please check the documentation about _Relations_, _Inheritance_, _Fetch_, _personalización of relations and tables with joinTable and JoinColumn_.
+>
 
-### Trabajo en Eclipse con JPA
+## ANNEX: 
 
-Desde la __perspectiva JPA__ en eclipse es posible trabajar más cómodamente sin necesidad de recordar todas las opciones disponibles en JPA. Para ello simplemente cambia de perspectiva a JPA
+### Work in Eclipse with JPA
+
+
+From the __JPA perspective__ in eclipse is posible to work more comfortably without having to remember all the options available in JPA. To do this simply changes the perspective to JPA.
 
 Haz clic en el nombre de la clase o en el nombre de alguna propiedad y verás como cambia el cuadro inferior __"JPA Details"__, este permitirá configurar la entidad con valores como el nombre de la tabla, el esquema, la estrategia de generación de clave primaria, las constraints, o el tipo fetch entre otros.
 ![](images/Imagen11.png) ![](images/Imagen12.png) .
@@ -231,9 +268,3 @@ Eclipse proporciona una herramienta gráfica para manejar las entidades, pero no
 9. ![](images/Imagen14.png)
 
 > __ATENCION:__ No borres directamente una entidad del diagrama pues borrará también el código original (opción cubo de basura o delete), si lo que quieres es simplemente eliminarla del diagrama selecciona la entidad y (selecciona el icono del diskette junto al cubo de basura, opción: save and remove from diagram) 
-
-
-
-[^2]: [Singleton](https://es.wikipedia.org/wiki/Singleton)
-[^3]: [DataSource](https://en.wikipedia.org/wiki/Datasource)
-[^4]: [ResourceBundle](https://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html)
