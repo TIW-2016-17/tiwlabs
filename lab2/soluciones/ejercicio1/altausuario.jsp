@@ -4,24 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Add User</title>
 </head>
 <body>
-	<form action="usuario" method="post">
+	<form action="user" method="post">
 		<fieldset>
-			<legend>Alta de Usuarios</legend>
+			<legend>Add User</legend>
 
-			<label for="nom">Nombre:</label> 
-			<input type="text" name="nombre" id="nom" required><br> 
-            <label for="apellidos">Apellidos:</label> 
-			<input type="text" name="apellidos" id="apellidos"><br>
-            <label for="usuario">Usuario:</label> 
-			<input type="text" name="usuario" id="usuario"><br>
-			<label for="clave">Password:</label> 
-			<input type="password" name="password" id="clave">
-			<input 	type="hidden" value="ALTA" name="accion">
+			<label for="nom">Name:</label> 
+			<input type="text" name="name" id="nam" required><br> 
+            <label for="lastname">Last Name:</label> 
+			<input type="text" name="lastname" id="lastname"><br>
+            <label for="user">User:</label> 
+			<input type="text" name="user" id="user"><br>
+			<label for="key">Password:</label> 
+			<input type="password" name="password" id="key">
+			<input 	type="hidden" value="ADD" name="action">
 		</fieldset>
-		<input type="submit" value="Enviar">
+		<input type="submit" value="Send">
 
 	</form>
 </body>
