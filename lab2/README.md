@@ -9,7 +9,7 @@
 
 <!-- MarkdownTOC depth=3 -->
 
-- [Exercise1.JDBC](#xercise1jdbc)
+- [Exercise1. JDBC](#exercise1-jdbc)
 - [Exercise2. JPA](#exercise2-jpa)
     - [1. Convert the project to JPA](#1-convert-the-project-to-jpa)
     - [2. Create JPA code](#2-create-the-jpa-code)
@@ -23,7 +23,7 @@
 <!-- /MarkdownTOC -->
 
 
-## Exercise1.JDBC
+## Exercise1. JDBC
 
 > This is an example rather than an exercise to demonstrate the use of JDBC and subsequent comparison with JPA.
 >
