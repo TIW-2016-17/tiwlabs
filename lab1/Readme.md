@@ -294,7 +294,7 @@ Let's get started with the development of Servlets with a first example :
 3. URL pattern: __/listado.jsp__
 4. Add the necessary code in the __doFilter__ method to control whether the user has a session to access, otherwise redirect him/her to the login.
 
-## Exercise10. Taglibs, Expression Language and 
+## Exercise10. Taglibs, Expression Language and domains
 
 > In this exercise we will refactor our views adding Expression Language (__[EL](https://uel.java.net/)__) and using Taglibs __[JSP Standard Tag Library (JSTL)](https://jstl.java.net/)__  to improve them.
 > We will also get data from the users array to make it more dynamic and functional with a layer of domain objects .
