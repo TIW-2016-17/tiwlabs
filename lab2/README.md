@@ -237,34 +237,33 @@ You should have a code like the following (by clicking on the _source tab_):
 
 From the __JPA perspective__ in eclipse is posible to work more comfortably without having to remember all the options available in JPA. To do this simply changes the perspective to JPA.
 
-Haz clic en el nombre de la clase o en el nombre de alguna propiedad y verás como cambia el cuadro inferior __"JPA Details"__, este permitirá configurar la entidad con valores como el nombre de la tabla, el esquema, la estrategia de generación de clave primaria, las constraints, o el tipo fetch entre otros.
+Click in the name of the class or the name of some property and you will see how it changes the box below __"JPA Details"__, this lets you configure the entity with values as the table name, the schema, the generation strategy of the primary key, the constraints, or the  fetch type among others.
 ![](images/Imagen11.png) ![](images/Imagen12.png) .
 
-> __NOTA:__ Para que esto funcione adecuadamente es necesario:
-> 1. Anotar inicialmente la clase como `@Entity` 
-> 2. Salvar los cambios cada vez que se modifique algo, si no el cuadro _JPA Details_ no se actualiza.
+> __NOTE: __  to make it work it is necessary:
+> 1. Write down initially the class as `@ Entity`
+> 2. Save changes each time you change something, if not the _JPA Details_ box is not updated.
 
-JPA necesita que las entidades se encuentren escritas en el fichero `persistence.xml` y eclipse proporciona un atajo para realizar este trabajo:
-1. Selecciona la entidad con el botón derecho del ratón
-2. Elige: __JPA Tools->ADD to Persistence Unit__
-
-
+JPA requires that the entities are written in the file `persistence.xml` and eclipse provides a shortcut for this work:
+1. Select the entity with the right mouse button
+2. Choose: __JPA Tools->ADD to Persistence Unit__
 
 ### JPA Designer
 
-> A veces resulta útil disponer de un entorno gráfico para manejar las entidades y ver las relaciones con otras entidades.
+> Sometimes it is useful to have a graphical environment for managing entities and see relationships with other entities.
 
-Eclipse proporciona una herramienta gráfica para manejar las entidades, pero no viene instalada por defecto.
+Eclipse provides a graphical tool for managing entities, but does not come installed by default.
 
 1. Menu __Help -> Install new software__
-2. En la pantalla que aparece despliega en el primer campo y elige la URL asociada a _Neon_
-3. __Cuando termine la búsqueda__ y aparezcan resultados, en el campo filtro escribe: _jpa_
-4. Marca la opción __JPA Diagram Editor__ acepta y continua con la instalación.
+2. In the screen that appears open the first field and select the URL associated with _Neon_
+3. __When the search is finish__ and results appear, in the filter field type: _jpa_
+4. Check the option __JPA Diagram Editor__ accept and continue with the installation.
 5. ![](images/Imagen13.png) 
-5. Se te pedirá que reinicies eclipse: Acepta con YES.
-6. Tras reiniciar, selecciona el proyecto _laboratorios_ con el botón derecho y __JPA Tools->Open Diagram__
-    7. Desde el diagrama creado podrás crear entidades y relaciones.
-8. Si ya tienes entidades creadas puedes arrastrarlas sobre el diagrama.
+5. You will be prompted to restart eclipse: Accept with YES.
+6. After rebooting, select the _laboratories_ project with the right mouse button and __JPA Tools->Open Diagram__
+7. From the diagram created you will be able to create entities and relationships.
+8. If you already have created entities you can drag on the diagram.
 9. ![](images/Imagen14.png)
 
-> __ATENCION:__ No borres directamente una entidad del diagrama pues borrará también el código original (opción cubo de basura o delete), si lo que quieres es simplemente eliminarla del diagrama selecciona la entidad y (selecciona el icono del diskette junto al cubo de basura, opción: save and remove from diagram) 
+> __ATENTION:__ Not directly delete an entity in the diagram as it also deletes the original code (option trash bin or delete), if you want to simply delete the diagram select the entity and (select the diskette icon next to the trash bin, option: save and remove from diagram)
+
