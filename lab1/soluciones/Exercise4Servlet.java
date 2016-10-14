@@ -13,15 +13,14 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Ejercicio4Servlet
  */
 @WebServlet("/login")
-public class Ejercicio4Servlet extends HttpServlet {
+public class Exercise4Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Ejercicio4Servlet() {
+	public Exercise4Servlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -31,14 +30,16 @@ public class Ejercicio4Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<body>");
-		out.println("<h1>Formulario</h1>");
+		out.println("<h1>Form</h1>");
 		out.println("<form action='login' method='post'>");
-		out.println("<input type='text' name='nombre'>");
+		out.println("<input type='text' name='name' placeholder='user'>");
 		out.println("<br>");
-		out.println("<input type='password' name='clave'> ");
-		out.println("<input type='submit' value='Enviar'>");
+		out.println("<input type='password' name='key' placeholder='password'> ");
+		out.println("<br>");
+		out.println("<input type='submit' value='Send'>");
 		out.println("</form>");
 		out.println("</body>");
 		out.println("</html>");
@@ -51,17 +52,17 @@ public class Ejercicio4Servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nombre = request.getParameter("nombre");
-		String password = request.getParameter("clave");
+		String name = request.getParameter("name");
+		String password = request.getParameter("key");
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		if (nombre.equals("usuario1") || password.equals("password1")) {
+		if (name.equals("user1") || password.equals("password1")) {
 
 			out.println("<html>");
 			out.println("<body>");
-			out.println("<p> Estos son tus datos: " + nombre + " y clave: " + password + "</p>");
+			out.println("<p> These are your data: " + name + " and key: " + password + "</p>");
 			out.println("</body>");
 			out.println("</html>");
 			out.close();
@@ -69,8 +70,8 @@ public class Ejercicio4Servlet extends HttpServlet {
 		} else {
 			out.println("<html>");
 			out.println("<body>");
-			out.println("<p> Usuario incorrecto</p>");
-			out.println("<p> <a href='login'>Volver</a></p>");
+			out.println("<p> Invalid user</p>");
+			out.println("<p> <a href='login'>Back</a></p>");
 			out.println("</body>");
 			out.println("</html>");
 			out.close();
