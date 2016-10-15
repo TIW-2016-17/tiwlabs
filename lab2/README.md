@@ -219,12 +219,6 @@ You should have a code like the following (by clicking on the _source tab_):
 11. Edit a user in the form and check how results are stored in tables.
 12. ![](images/Imagen10.png)
 
-> __Trabajo recomendado:__ Modifica el proyecto para incluir relaciones `OneToMany` y `ManyToMany`. Por ejemplo un usuario puede tener varias direcciones asociadas y una dirección puede ser compartida por varios usuarios.
-> 
-> JPA incluye muchas características potentes para el trabajo con datos, revisa la documentación sobre _Relaciones_, _Herencia_, _Fetch_, _personalización de las relaciones y tablas con JoinTable y JoinColumn_. 
-> 
-
-
 > __Recommended homework:__ Modify the project to include relationships `OneToMany` and `ManyToMany`. For example, a user can have multiple associated addresses and an address can be shared by multiple users.
 >
 > JPA includes many powerful features for working with data, please check the documentation about _Relations_, _Inheritance_, _Fetch_, _personalización of relations and tables with joinTable and JoinColumn_.
