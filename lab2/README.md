@@ -102,24 +102,6 @@ On this occasion and for simplicity it is proposed to incorporate all laboratori
 5. ![](images/Imagen2.png)
 6. Press __Finish__ and it will generate a new __persistence.xml__ descriptor within a __META-INF__ directory open it with double click.
 7. ![](images/Imagen3.png)
-
-
-8. In the window that appears change these values:
-    9. __name:__ laboratoriesPU
-    10. __Persistence Provider:__ org.eclipse.persistence.jpa.PersistenceProvider
-    11. __Managed classes:__ agrega el dominio usuario
-12. ![](images/Imagen4.png)
-13. En la parte inferior del editor cambia a la __pestaña Connection__ y aplica los siguiente valores:
-14. ![](images/Imagen5.png)
-15. Cambia a la __pestaña Options__ y modifica el valor _Loggin level_ a __Fine__
-16. ![](images/Imagen6.png)
-17. En la __pestaña Schema Generation__ modifica el valor a __Create__
-18. ![](images/Imagen7.png)
-19. En la __pestaña Properties__ añade una nueva propiedad como la siguiente:
-20. ![](images/Imagen8.png)
-21. Guarda los cambios
-
-
 8. In the window that appears change these values:
     9. __name: __ laboratoriesPU
     10. __Persistence Provider: __ org.eclipse.persistence.jpa.PersistenceProvider
@@ -161,11 +143,6 @@ You should have a code like the following (by clicking on the _source tab_):
 
 ### 2. Create JPA code
 
-1. Modifica la clase `es.uc3m.tiw.lab1.dominios.Usuario` para que su código sea JPA
-2. Sustituye el código JDBC de la clase `es.uc3m.tiw.lab2.dominios.UsuarioDAOImpl` por código JPA para manejar la persistencia mediante un objeto __EntityManager__
-3. Modifica los servlet `es.uc3m.tiw.lab1.LoginServlet` y `es.uc3m.tiw.lab1.UsuarioServlet` para que usen ahora código JPA. Puedes obtener la unidad de persistencia de dos maneras:
-
-
 1. Modify the class `es.uc3m.tiw.lab1.domains.User` to change your code to JPA
 2. Replace the JDBC code of the `es.uc3m.tiw.lab2.dominios.UserDAOImpl` class for JPA code to handle persistence by an  __EntityManager__ object
 3. Modify the servlet  ` es.uc3m.tiw.lab1.LoginServlet` and `es.uc3m.tiw.lab1.UserServlet` to use JPA code now. You can get the persistence unit in two ways:
@@ -180,14 +157,7 @@ You should have a code like the following (by clicking on the _source tab_):
 ```
 
 ### 3. Create the DataSource
-
-> En el fichero _persistence.xml_ hemos usado la cadena `jdbc/tiw` como definición del DataSource de Glassfish que apunta a nuestra base de datos. Antes de continuar es necesario crear dicho recurso en el servidor Glassfish.
-
-1. Abre la consola de administración de Glassfish: [https://localhost:4848](https://localhost:4848). Usuario/password: admin/admin
-2. Crea el DataSource.
-    3. Puedes usar la guía de referencia del material de clase.
-    
-    
+ 
 > In the _persistence.xml_ file we used the string `jdbc/tiw` as a definition of the Glassfish's DataSource that points to our database. Before proceeding you need to create that resource in the Glassfish server.
 
 1. Open the management console of Glassfish: [https://localhost:4848](https://localhost:4848).  User/password: admin/admin
@@ -198,7 +168,7 @@ You should have a code like the following (by clicking on the _source tab_):
 
 1. Deploy the application on the Glassfish server
 2. Notes that in MySql it has been created a new table thanks to the strategy `create`
-3. ![](images/Imagen9.png)
+3. ![](images/Imagen9-eng.png)
 3. The test of the application should be functional and allow to create new users, update them and delete them.
     4. __NOTE: __ `create` will create tables if they do not exist and next the servlet will insert the records of the test users, if you plan to test and launch several times the application, it will return an exception because the records already exist for this case it is better to use 'drop-and-create`.
 
