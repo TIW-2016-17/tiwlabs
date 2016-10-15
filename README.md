@@ -39,15 +39,15 @@ At the end of the laboratories the student will have a thorough understanding of
 
 In this first part is performed the configuration of the working environment
 
-### Lab1. Web part
+### [Lab1. Web part](https://github.com/TIW-2016-17/tiwlabs/tree/master/lab1)
 
 Exercises and concepts about development with Servlets and JSPs, filters and taglibs
 
-### Lab2. Persistence
+### [Lab2. Persistence](https://github.com/TIW-2016-17/tiwlabs/tree/master/lab2)
 
 Exercises and examples of the us of JPA vs
 JDBC 
-### Lab3. EJB
+### [Lab3. EJB](https://github.com/TIW-2016-17/tiwlabs/tree/master/lab3)
 
 The most basic uses of this type of project components and multicarrier shown.
 
