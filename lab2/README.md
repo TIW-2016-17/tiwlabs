@@ -217,7 +217,7 @@ You should have a code like the following (by clicking on the _source tab_):
 9. Add the new logic to handle addresses in the servlets
 10. Notes how a new  `ADDRESSES` table has been created within the  `FOREIGN_KEY` in the table  `USERS`
 11. Edit a user in the form and check how results are stored in tables.
-12. ![](images/Imagen10.png)
+12. ![](images/Imagen10-eng.png)
 
 > __Recommended homework:__ Modify the project to include relationships `OneToMany` and `ManyToMany`. For example, a user can have multiple associated addresses and an address can be shared by multiple users.
 >
@@ -232,7 +232,7 @@ You should have a code like the following (by clicking on the _source tab_):
 From the __JPA perspective__ in eclipse is posible to work more comfortably without having to remember all the options available in JPA. To do this simply changes the perspective to JPA.
 
 Click in the name of the class or the name of some property and you will see how it changes the box below __"JPA Details"__, this lets you configure the entity with values as the table name, the schema, the generation strategy of the primary key, the constraints, or the  fetch type among others.
-![](images/Imagen11.png) ![](images/Imagen12.png) .
+![](images/Imagen11-eng.png) ![](images/Imagen12-eng.png) .
 
 > __NOTE: __  to make it work it is necessary:
 > 1. Write down initially the class as `@ Entity`
