@@ -12,7 +12,7 @@
 - [Deploy in the server](#deploy-in-the-server)
 - [Using Eclipse](#using-eclipse)
 - [Observe](#observe)
-- [References](#references)
+
 
 <!-- /MarkdownTOC -->
 
@@ -105,19 +105,16 @@ jpa-new-entity --named User --idStrategy AUTO
 ## Observe
 
 >
-> Puedes comprobar como se ha generado el código y la estructura. Los dominios van en un paquete `model` los ejbs en `service`.
-> 
-> Mira también el fichero `persistence.xml` no será muy diferente del que hemos creado.
-> 
-> Puedes probar a crear también un ejb, para ello escribe en el terminal `ejb-setup` y a continuación `ejb-new-bean` si pulsas <kbd>TAB</kbd> te dará opciones y si eliges `--type` y vuelves a pulsar <kbd>TAB</kbd> te dirá los tipos de EJBs que puedes usar (algo que ya debería ser familiar).
-> 
+> You can check how the code has been generated and the structure. The domains are in the package `model` the ejbs in `service`.
+>
+> See also the `persistence.xml` file, it will not be very different from what we have created previously.
+>
+> You can also try to create a ejb, To that end, write in the terminal `ejb-setup` next `ejb-new-bean` if you press <kbd>TAB</kbd>  it will give you options and if you choose `--type` and you press  again <kbd>TAB</kbd> it will tell you the types of EJBs that you can use (it should be already familiar).
+>
 
-         [registroUsuarios]$ ejb-new-bean --type
+         [userRegistration]$ ejb-new-bean --type
             MESSAGEDRIVEN  SINGLETON  STATEFUL  STATELESS
 
-Prueb otras opciones, como hacer relaciones entre entidades, usar servicios, crear servlets, usar JSF, etc. Puedes encontrar muchos ejemplos en la documentación oficial[^2]
-
+Try other options, such as making relationships between entities, use services, create servlets, using JSF, etc. You can find many examples in the [https://forge.jboss.org/documentation](official documentation)
 ---
-## References
 
-[^1]: [https://forge.jboss.org/documentation](https://forge.jboss.org/documentation)
