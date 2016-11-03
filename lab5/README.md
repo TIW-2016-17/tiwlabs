@@ -100,7 +100,7 @@ jpa-new-entity --named User --idStrategy AUTO
     6. Accept
 7. If you have enabled maven console you will see how all dependencies are downloaded to configure the project.
 8. At the end you will have a JEE project very similar to what we have been building.
-9. ![](images/Imagen7.png)
+9. ![](images/Imagen7eng.png)
 
 ## Observe
 
