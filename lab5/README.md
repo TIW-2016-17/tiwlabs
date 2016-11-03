@@ -34,7 +34,7 @@
 7. ![](images/Imagen2Eng.png)
 
 
-## Setting the persistenc
+## Setting the persistence
 
 1. Type the following command (use <kbd>TAB</kbd> key to assist you):
 
