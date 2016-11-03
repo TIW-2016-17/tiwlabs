@@ -58,7 +58,7 @@ jpa-new-entity --named User --idStrategy AUTO
 5. Create another property `String lastName`
 
 ```
-[Usuer.java]$ jpa-new-field --named lastName --type String
+[User.java]$ jpa-new-field --named lastName --type String
 
 ```
 
