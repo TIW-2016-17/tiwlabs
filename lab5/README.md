@@ -31,7 +31,7 @@
 ```
 
 6. Once the project is completed,  a success message will appear and the prompt will be placed in the project:. 
-7. ![](images/Imagen2.png)
+7. ![](images/Imagen2Eng.png)
 
 
 ## Configurando la persistencia
