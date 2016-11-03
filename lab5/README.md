@@ -75,20 +75,20 @@ jpa-new-entity --named User --idStrategy AUTO
 > __Build__ will generate a file _userregistration.war_ in the path _target_ that you can use to deploy from the Glassfish/Payara's console.
 > 
 
-## Despliegue en el servidor
+## Deploy in the server
 
-1. Abre la consola de administración de Glassfish/Payara Server ([https://localhost:4848](https://localhost:4848))
-2. En el menú lateral selecciona __Applications__
-3. Pulsa el botón __Deploy__
-4. Botón __Choose File__ y selecciona el fichero registrousuarios.war _(./forgelab/registroUsuarios/target/registrousuarios.war)_
-    5. __NOTA:__ Posiblemente el servidor de un `warning` debido a que la tabla `SEQUENCE` ya estaba creada por otro proyecto.
-5. Navega a la dirección [http://localhost:8080/registroUsuarios](http://localhost:8080/registroUsuarios) y verás la aplicación generada:
+1. Open the Glassfish/Payara server management console ([https://localhost:4848](https://localhost:4848))
+2. In the lateral menu select __Applications__
+3. Press __Deploy__ button
+4. Press  __Choose File__ and select the file userregistration.war _(./forgelab/userRegistration/target/userregistration.war)_
+    5. __NOTE:__ Perhaps the server show up a `warning` due to the `SEQUENCE` table that was already created by another project.
+5. Navigate to the address [http://localhost:8080/userRegistration](http://localhost:8080/userRegistration) and you will se the generated application:
 6. ![](images/Imagen4.png)
 7. ![](images/Imagen5.png)
 8. ![](images/Imagen6.png)
 
-> La aplicación está configurada para aplicar validación en función de los campos y contiene un buscador de usuarios. 
-> Prueba a crear algunos usuarios y comprobar en MySQL como se ha creado una tabla `USUARIO` que contiene los usuarios creados.
+> The application is configured to apply validation depent on the fields and contains a user search.
+> Try add some users and check in MySQL how a table `USER` has been created with added users.
 
 ## Usando Eclipse
 
