@@ -83,9 +83,9 @@ jpa-new-entity --named User --idStrategy AUTO
 4. Press  __Choose File__ and select the file userregistration.war _(./forgelab/userRegistration/target/userregistration.war)_
     5. __NOTE:__ Perhaps the server show up a `warning` due to the `SEQUENCE` table that was already created by another project.
 5. Navigate to the address [http://localhost:8080/userRegistration](http://localhost:8080/userRegistration) and you will se the generated application:
-6. ![](images/ImagenEng4.png)
-7. ![](images/ImagenEng5.png)
-8. ![](images/ImagenEng6.png)
+6. ![](images/Imagen4Eng.png)
+7. ![](images/Imagen5Eng.png)
+8. ![](images/Imagen6Eng.png)
 
 > The application is configured to apply validation depent on the fields and contains a user search.
 > Try add some users and check in MySQL how a table `USER` has been created with added users.
