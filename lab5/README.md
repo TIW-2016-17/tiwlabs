@@ -22,7 +22,7 @@
 1. Open a terminal  _( <kbd>CTRL + ALT + T</kbd> if you use the image)_ and create a new directory:
     2. `mkdir forgelab`
     3. `cd forgelab`
-3. type the command `forge` in the terminal window and wait for the JBoss Forge console. .
+3. Type the command `forge` in the terminal window and wait for the JBoss Forge console. .
 4. ![](images/Imagen1.png)
 5.  Enter the following command (you can use the <kbd>TAB</kbd> key to assist you and commands and parameters will start showing up):
 
@@ -34,31 +34,31 @@
 7. ![](images/Imagen2Eng.png)
 
 
-## Configurando la persistencia
+## Setting the persistenc
 
-1. Escribe el siguiente comando (apóyate en <kbd>TAB</kbd>):
+1. Type the following command (use <kbd>TAB</kbd> key to assist you):
 
 ```
 jpa-setup --jpa-provider Eclipse\ Link --db-type MYSQL_INNODB --data-source-name jdbc/tiw --persistence-unit-name forgelabPU 
 ```
 
-2. A continuación:
+2. Then:
 
 ```
-jpa-new-entity --named Usuario --idStrategy AUTO
+jpa-new-entity --named User --idStrategy AUTO
 ```
 
-3. Observa que ahora el prompt se ha situado en la clase Usuario.java. 
-4. Escribe el siguiente comando para añadir una propiedad `String nombre` con métodos get/set
+3. Note that the prompt is now located in the User.java class.
+4. Enter the following command to add a property `String name` with get/set methods
 
 ```
-[Usuario.java]$ jpa-new-field --named nombre --type String --length 20 --not-nullable 
+[User.java]$ jpa-new-field --named name --type String --length 20 --not-nullable 
 ```
 
-5. Crea otra propiedad `String apellidos`
+5. Create another property `String lastName`
 
 ```
-[Usuario.java]$ jpa-new-field --named apellidos --type String
+[Usuer.java]$ jpa-new-field --named lastName --type String
 
 ```
 
