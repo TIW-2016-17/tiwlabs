@@ -83,14 +83,14 @@ jpa-new-entity --named User --idStrategy AUTO
 4. Press  __Choose File__ and select the file userregistration.war _(./forgelab/userRegistration/target/userregistration.war)_
     5. __NOTE:__ Perhaps the server show up a `warning` due to the `SEQUENCE` table that was already created by another project.
 5. Navigate to the address [http://localhost:8080/userRegistration](http://localhost:8080/userRegistration) and you will se the generated application:
-6. ![](images/Imagen4.png)
-7. ![](images/Imagen5.png)
-8. ![](images/Imagen6.png)
+6. ![](images/ImagenEng4.png)
+7. ![](images/ImagenEng5.png)
+8. ![](images/ImagenEng6.png)
 
 > The application is configured to apply validation depent on the fields and contains a user search.
 > Try add some users and check in MySQL how a table `USER` has been created with added users.
 
-## Usando Eclipse
+## Using Eclipse
 
 1. Elimina la aplicación del servidor Glassfish/Payara
     2. __Consola de administración->Applications->Marca "registroUsuarios"->Botón undeploy__
@@ -102,7 +102,7 @@ jpa-new-entity --named User --idStrategy AUTO
 8. Al finalizar dispondrás de un proyecto JEE muy similar al que hemos estado construyendo
 9. ![](images/Imagen7.png)
 
-## Observa
+## Observe
 
 >
 > Puedes comprobar como se ha generado el código y la estructura. Los dominios van en un paquete `model` los ejbs en `service`.
@@ -118,7 +118,6 @@ jpa-new-entity --named User --idStrategy AUTO
 Prueb otras opciones, como hacer relaciones entre entidades, usar servicios, crear servlets, usar JSF, etc. Puedes encontrar muchos ejemplos en la documentación oficial[^2]
 
 ---
-## Referencias
+## References
 
-[^1]: 
-[^2]: [https://forge.jboss.org/documentation](https://forge.jboss.org/documentation)
+[^1]: [https://forge.jboss.org/documentation](https://forge.jboss.org/documentation)
