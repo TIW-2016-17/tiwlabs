@@ -72,7 +72,7 @@ jpa-new-entity --named User --idStrategy AUTO
 ```
 8. ![](images/Imagen3.png)
 9. When finished, type `build` press <kbd>ENTER</kbd> and wait until you see the following message: `***SUCCESS*** Build Success`
-> __Build__ will generate a file _userregistration.war_ in the path _target_ that you can use to deploy from the Glassfish/Payara's console.
+> __Build__ will generate a file _userRegistration.war_ in the path _target_ that you can use to deploy from the Glassfish/Payara's console.
 > 
 
 ## Deploy in the server
@@ -80,7 +80,7 @@ jpa-new-entity --named User --idStrategy AUTO
 1. Open the Glassfish/Payara server management console ([https://localhost:4848](https://localhost:4848))
 2. In the lateral menu select __Applications__
 3. Press __Deploy__ button
-4. Press  __Choose File__ and select the file userregistration.war _(./forgelab/userRegistration/target/userregistration.war)_
+4. Press  __Choose File__ and select the file _userRegistration.war _(./forgelab/userRegistration/target/userregistration.war)_
     5. __NOTE:__ Perhaps the server show up a `warning` due to the `SEQUENCE` table that was already created by another project.
 5. Navigate to the address [http://localhost:8080/userRegistration](http://localhost:8080/userRegistration) and you will se the generated application:
 6. ![](images/Imagen4Eng.png)
@@ -92,14 +92,14 @@ jpa-new-entity --named User --idStrategy AUTO
 
 ## Using Eclipse
 
-1. Elimina la aplicación del servidor Glassfish/Payara
-    2. __Consola de administración->Applications->Marca "registroUsuarios"->Botón undeploy__
-3. En eclipse:
+1. Delete the aplication from the Glassfish/Payara server
+    2. __Payara administration console->Applications->Check "_userRegistration"->undeploy Button__
+3. In eclipse:
     4. __File->Import->Maven->Existing Maven projects__
-    5. .../forgelabs/registrousuarios
-    6. Acepta
-7. Si tienes activada la consola de maven verás como se descargan todas las dependencias para configurar el proyecto.
-8. Al finalizar dispondrás de un proyecto JEE muy similar al que hemos estado construyendo
+    5. .../forgelabs/_userRegistration
+    6. Accept
+7. If you have enabled maven console you will see how all dependencies are downloaded to configure the project.
+8. At the end you will have a JEE project very similar to what we have been building.
 9. ![](images/Imagen7.png)
 
 ## Observe
