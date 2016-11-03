@@ -62,18 +62,17 @@ jpa-new-entity --named User --idStrategy AUTO
 
 ```
 
-## Generación de las vistas. Scaffolding
+## Generation of views. Scaffolding
 
-6. Escribe el comando `cd ..` para subir al paquete `model` y a continuación escribe el siguiente para generar las vistas:
-    7. Puedes elegir entre __Faces o AngularJS__
+6. Type the command `cd ..` to go up one level to the `model` package and then write the followinf command to generate views:
+    7. You can choose between  __Faces or AngularJS__
 
 ```
 [model]$ scaffold-generate --provider AngularJS --targets es.uc3m.tiw.forge.model.*  
 ```
 8. ![](images/Imagen3.png)
-9. Cuando finalice escribe `build` presiona <kbd>ENTER</kbd> y espera hasta que salga el mensaje: `***SUCCESS*** Build Success`
-
-> __Build__ generará un fichero _registrousuario.war_ en el directorio _target_ que puedes usar para desplegar desde la consola de Glassfish/Payara.
+9. When finished, type `build` press <kbd>ENTER</kbd> and wait until you see the following message: `***SUCCESS*** Build Success`
+> __Build__ will generate a file _userregistration.war_ in the path _target_ that you can use to deploy from the Glassfish/Payara's console.
 > 
 
 ## Despliegue en el servidor
