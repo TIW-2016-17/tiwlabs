@@ -1,37 +1,36 @@
 # Lab5. JBoss Forge
 
-> JBoss Forge permite acelerar la construcción de proyectos JEE y aunque hay plugins gráficos para varios entornos, en esta ocasión usaremos la versión de consola de comandos por rapidez.
-> 
-> Una vez adquiridos los conocimientos necesarios para trabajar con componentes JEE podemos ayudarnos de herramientas que aceleran nuestro trabajo como JBoss Forge[^1]
-> 
+> JBoss Forge allows  accelerate the construction of JEE projects and although there are graphics plugins for various environments, this time we will use the console because is faster.
+>
+> Once acquired the necessary knowledge to work with JEE components we can use tools like [JBoss Forge](https://forge.jboss.org) that accelerate our work.
 
 <!-- MarkdownTOC -->
 
-- [Creacion del proyecto](#creacion-del-proyecto)
-- [Configurando la persistencia](#configurando-la-persistencia)
-- [Generación de las vistas. Scaffolding](#generación-de-las-vistas-scaffolding)
-- [Despliegue en el servidor](#despliegue-en-el-servidor)
-- [Usando Eclipse](#usando-eclipse)
-- [Observa](#observa)
-- [Referencias](#referencias)
+- [Project creation](#project-creation)
+- [Setting the persistence](#setting-the-persistence)
+- [Generation of views. Scaffolding](#generation-of-views-scaffolding)
+- [Deploy in the server](#deploy-in-the-server)
+- [Using Eclipse](#using-eclipse)
+- [Observe](#observe)
+- [References](#references)
 
 <!-- /MarkdownTOC -->
 
 
-## Creacion del proyecto
+## Project creation
 
-1. Abre una terminal de comandos _( <kbd>CTRL + ALT + T</kbd> si usas la imagen   )_ y crea un nuevo directorio:
+1. Open a terminal  _( <kbd>CTRL + ALT + T</kbd> if you use the image)_ and create a new directory:
     2. `mkdir forgelab`
     3. `cd forgelab`
-3. escribe el comando `forge` por pantalla y espera a que aparezca la consola de JBoss Forge.
+3. type the command `forge` in the terminal window and wait for the JBoss Forge console. .
 4. ![](images/Imagen1.png)
-5. Escribe el siguiente comando (puedes usar la tecla <kbd>TAB</kbd> como ayuda e irán apareciendo comandos y parámetros):
+5.  Enter the following command (you can use the <kbd>TAB</kbd> key to assist you and commands and parameters will start showing up):
 
 ```
- project-new --named registroUsuarios --final registrousuarios --version 1.0 --top-level-package es.uc3m.tiw.forge --stack JAVA_EE_7
+ project-new --named userRegistration --final userregistration --version 1.0 --top-level-package es.uc3m.tiw.forge --stack JAVA_EE_7
 ```
 
-6. Cuando termine aparecerá un mensaje de éxito y el prompt se situará en el proyecto:
+6. Once the project is completed,  a success message will appear and the prompt will be placed in the project:. 
 7. ![](images/Imagen2.png)
 
 
@@ -122,5 +121,5 @@ Prueb otras opciones, como hacer relaciones entre entidades, usar servicios, cre
 ---
 ## Referencias
 
-[^1]: [JBoss Forge](https://forge.jboss.org)
+[^1]: 
 [^2]: [https://forge.jboss.org/documentation](https://forge.jboss.org/documentation)
