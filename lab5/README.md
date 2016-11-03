@@ -112,9 +112,8 @@ jpa-new-entity --named User --idStrategy AUTO
 > You can also try to create a ejb, To that end, write in the terminal `ejb-setup` next `ejb-new-bean` if you press <kbd>TAB</kbd>  it will give you options and if you choose `--type` and you press  again <kbd>TAB</kbd> it will tell you the types of EJBs that you can use (it should be already familiar).
 >
 
-         [userRegistration]$ ejb-new-bean --type
+         [registroUsuarios]$ ejb-new-bean --type
             MESSAGEDRIVEN  SINGLETON  STATEFUL  STATELESS
 
 Try other options, such as making relationships between entities, use services, create servlets, using JSF, etc. You can find many examples in the [https://forge.jboss.org/documentation](official documentation)
----
 
