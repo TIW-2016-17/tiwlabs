@@ -64,7 +64,7 @@ jpa-new-entity --named User --idStrategy AUTO
 
 ## Generation of views. Scaffolding
 
-6. Type the command `cd ..` to go up one level to the `model` package and then write the followinf command to generate views:
+6. Type the command `cd ..` to go up one level to the `model` package and then write the following command to generate views:
     7. You can choose between  __Faces or AngularJS__
 
 ```
