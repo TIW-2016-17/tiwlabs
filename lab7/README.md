@@ -154,14 +154,14 @@ public class DemoApplication {
 
 ### What has happened
 
-1. Al anotar una clase como `@Controller` automáticamente deja de ser una clase corriente para convertirse en un controlador web que es capaz de recibir objetos `request` y `response`
-2. SpringBoot escanea todo el classpath buscando clases anotadas y las carga directamente
-3. `@RequestMapping` define la URL de entrada, así como todos los parámetros y atributos asociados al objeto `HttpServletRequest`
-4. `@ResponseBody` permite modificar el objeto `HttpServletResponse` en este caso el tipo de retorno `String` se convierte en el cuerpo de la respuesta y por tanto la cadena _"Hola"_ será transmitida implícitamente con la cabecera _text/plain_
-5. Al iniciar la aplicación, SpringBoot genera todos los artefactos para que aparezca la aplicación con un tomcat embebido y el proyecto _demo_ como el contexto por defecto, por lo que no hay que hacer _http://localhost:8080/demo/saludos_, si no solamente  _http://localhost:8080/saludos_
-    6. La URL completa con el contexto habría que hacerlo en caso de que desplegáramos en un servidor externo (como en Glassfish) que es capaz de albergar varios contextos.
+1. When you note down a class as `@Controller` automatically stop being a regular class to convert in a web controller that is able to recibe objects `request` and `response`
+2. SpringBoot scans all the classpath searching noted class and load them directly.
+3. `@RequestMapping` define the input URL, as well as every parameters and atributes asociated to the `HttpServletRequest` object
+4. `@ResponseBody` allow to modify the `HttpServletResponse` object in this case the return`String` type it is converted in the response body therefore the _"Hi"_ string will be transmited implicitly with the _text/plain_ header
+5. When the application is started, SpringBoot generate every artifact so that the application show up with an embedded tomcat and the   _demo_ project as the default context, therefore you shouldn't go to _http://localhost:8080/demo/greet_, just   _http://localhost:8080/greet_
+    6. The full URL with the context should be done in case we deployed in a external server (like Glassfish) that is able to keer many contexts.
 
-### Convertirlo en un WAR
+### Transform in a WAR
 
 > Esta parte es opcional y se muestra como ejemplo en el caso de que queramos usar un flujo de trabajo más tradicional desplegando en un servidor de aplicaciones.
 
