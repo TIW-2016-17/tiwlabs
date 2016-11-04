@@ -1,47 +1,47 @@
 # Lab7. SpringBoot
 
-> SpringBoot <sup id="a1">[1](#f1)</sup> es una herramienta de la familia SpringFramework <sup id="a2">[2](#f2)</sup> que acelera el desarrollo reduciendo la complejidad de las configuraciones, así como la cantidad de código necesario para enlazar todos los módulos necesarios para el desarrollo de una aplicación.
+> SpringBoot <sup id="a1">[1](#f1)</sup> is a tool of the SpringFramework family <sup id="a2">[2](#f2)</sup> that speed up development by reducing the complexity of  settings and amount of code needed to link all the modules required for the development of an application.
 > 
-> SpringBoot ha sido diseñada para concebir las aplicaciones de manera monolítica o como microservicios, haciendo muy fácil el desarrollo de servicios REST.
+> SpringBoot has been designed to make monolithic applications or as microservices, making the development of REST services very easy.
 > 
-> En este laboratorio iremos construyendo una aplicación "estilo spring" usando los módulos para el desarrollo de una aplicación web/REST completa junto a la persistencia con JPA. Para ello haremos uso de los siguientes módulos:
-> 
+> In this lab we will build a "spring style" application using the modules for the development complete web/REST application with the  within JPA persistence. To do this we will use the following modules:
+
 > - SpringMVC <sup id="a3">[3](#f3)</sup>
 > - SpringData <sup id="a4">[4](#f4)</sup>
 > - SpringREST <sup id="a5">[5](#f5)</sup>
 > - SpringHATEOAS <sup id="a6">[6](#f6)</sup>
 
-## INDICE
+## INDEX
 
 <!-- MarkdownTOC  depth=3 -->
 
-- [Ejercicio 1. Configuración del proyecto](#ejercicio-1-configuración-del-proyecto)
-    - [Ejecutar la aplicacion](#ejecutar-la-aplicacion)
-- [Ejercicio 2. Parte Web](#ejercicio-2-parte-web)
-    - [¿Que ha ocurrido?](#¿que-ha-ocurrido)
-    - [Convertirlo en un WAR](#convertirlo-en-un-war)
-- [Ejercicio 3. Parametros](#ejercicio-3-parametros)
-    - [¿Que ha ocurrido?](#¿que-ha-ocurrido-1)
-- [Ejercicio 4. Vistas](#ejercicio-4-vistas)
-    - [¿Que ha ocurrido?](#¿que-ha-ocurrido-2)
-- [Ejercicio 5. JSPs](#ejercicio-5-jsps)
-- [Ejercicio 6. REST](#ejercicio-6-rest)
-    - [¿Que ha ocurrido?](#¿que-ha-ocurrido-3)
-- [Ejercicio 7. RESTController](#ejercicio-7-restcontroller)
-- [Ejercicio 8. XML](#ejercicio-8-xml)
-- [Ejercicio 9. JPA](#ejercicio-9-jpa)
-    - [¿Que ha ocurrido?](#¿que-ha-ocurrido-4)
-    - [Algunas preguntas](#algunas-preguntas)
-- [Ejercicio 10. Data REST](#ejercicio-10-data-rest)
-- [Ejercicio 11. HATEOAS](#ejercicio-11-hateoas)
-    - [¿Que ha ocurrido?](#¿que-ha-ocurrido-5)
-- [Referencias](#referencias)
+- [Exercise 1. Project setup](#exercise-1-project-setup)
+    - [Execute the application](#execute-the-application)
+- [Exercise 2. Web part](#exercise-2-web-part)
+    - [What has happened?](#what-has-happened)
+    - [Transform in a WAR](#transform-in-a-war)
+- [Exercise 3. Parameters](#exercise-3-parameters)
+    - [What has happened?](#what-has-happened-1)
+- [Exercise 4. Views](#exercise-4-views)
+    - [What has happened?](#what-has-happened-2)
+- [Exercise 5. JSPs](#exercise-5-jsps)
+- [Exercise 6. REST](#exercise-6-rest)
+    - [What has happened?](#what-has-happened-3)
+- [Exercise 7. RESTController](#exercise-7-restcontroller)
+- [Exercise 8. XML](#exercise-8-xml)
+- [Exercise 9. JPA](#exercise-9-jpa)
+    - [What has happened?](#what-has-happened-4)
+    - [Some Questions](#some-questions)
+- [Exercise 10. Data REST](#exercise-10-data-rest)
+- [Exercise 11. HATEOAS](#exercise-11-hateoas)
+    - [What has happened?](#what-has-happened-5)
+- [References](#references)
 
 <!-- /MarkdownTOC -->
 
-## Ejercicio 1. Configuración del proyecto
+## Exercise 1. Project setup
 
-> Para crear el proyecto puedes usar __STS__ o [https://start.spring.io]() y poner las dependencias:
+> To create the project you can use __STS__ o [https://start.spring.io]() and put the dependencies:
 > - Web, 
 > - Thymeleaf, 
 > - JDBC, 
@@ -51,16 +51,15 @@
 
 
 
-1. Abre STS y cambia a la perspectiva __Spring__. 
-2. Crea el proyecto con __File->New->Spring Starter Project__
+1. Open STS and change the perspective __Spring__. 
+2. Create the project with __File->New->Spring Starter Project__
 3. ![](images/Imagen1.png)
-4. Pulsa  __Finish__
-5. Espera a que se descarguen las dependencias y se construya el proyecto (puedes ver el estado activando la consola de maven).
+4. Press  __Finish__
+5. Wait unilt all dependencies have been downloaded and the project is built (you can see the state activating the maven's console) 
 
-> Una vez finalizado abre el fichero __pom.xml__
+> Once is finalized open the __pom.xml__ file
 
-- Dentro del fichero pom.xml encontrarás una sección de código como la siguiente:
-
+- Inside the pom.xml file you will find a section with the following code
 ```xml
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,16 +73,16 @@
         </dependency>
 ```
 
-> Estas dos dependencias permiten importar todas las librerías necesarias para configurar el proyecto, tanto para desarrollo como para testing.
+> This two dependencies allow to import every necessary library to configure the project, for developing as much as testing. 
 > 
-> Si cambias a la pestaña __Dependency Hierarchy__ verás el listado de librerías que se ha descargado y necesarias para trabajar en el proyecto como:
-> - Spring-core: es la librería base de springframework
-> - slf4j: permite escribir logs
-> - mockito: librería para crear stubs y mock para pruebas unitarias
+> If you move to __Dependency Hierarchy__ tab you will see the list of libraries that have been downloaded and are necessary to work in a project like:
+> - Spring-core: is the base library of springframework
+> - slf4j: allow to write logs
+> - mockito: library to create stubs and mock for unit testing
 > 
-> Todo está configurado con sus respectivas versiones.
+> Everything is configured with their respective versions 
 
-- Abre la clase `es.uc3m.tiw.DemoApplication` y observa el código.
+- Open `es.uc3m.tiw.DemoApplication` class and observe the code.
 
 ```java
 @SpringBootApplication
@@ -95,21 +94,21 @@ public class DemoApplication {
 }
 ```
 
-- Esta clase es la que permite lanzar la aplicación de manera autónoma sin servidor de aplicaciones.
-    - La anotación `@SpringBootApplication` configura todos los parámetros necesarios para que funcione.
-    - Dentro del método `main()` `SpringApplication.run` ejecuta la clase de configuración, en este ejemplo sigue siendo la propia clase `DemoApplication` aunque no tengamos configuración a medida, algo que podemos modificar.
-    - De esta manera podemos ejecutar la clase como si fuera una clase normal y esta abrirá un tomcat embebido con la aplicación dentro.
-        - Si quisiéramos desplegar la aplicación en un servidor propio tendríamos que modificar el pom.xml para que en lugar de jar sea war el fichero creado y cambiar el código de esta clase como ya veremos.
+- This class is the one that allow to launch the application independently without the application server 
+    - The annotation `@SpringBootApplication` configure every parameter necessary to work.
+    - Inside the `main()` method `SpringApplication.run` execute the configuration class, in this example it is `DemoApplication` class itself although  we don't have a custom configuration, something that we can modify.
+    - This way we can execute the class as if it was a normal class and it will open tomcat embedded with the application inside.
+        - If we wanted to deploy the application in our own server we should modify the pom.xml file so that instead of the jar file it will be the war the file created and change the code of this class as we shall see.
 
-### Ejecutar la aplicacion
+### Execute the application
 
-1. Selecciona el proyecto y botón derecho __Run As->Spring Boot App__
+1. Select the project and the right button __Run As->Spring Boot App__
     2. ![](images/Imagen3.png)
-2. __Opcional:__ Si no dispones de STS y trabajas con eclipse puedes elegir __Run As->Java Application__
-    3. Eclipse mostrará una lista de clases ejecutables que disponen del método _main_, selecciona la clase `DemoApplication` y listo
+2. __Opcional:__ If you don't have STS and you work with eclipse you can choose __Run As->Java Application__
+    3. Eclipse will show a list of executable classes that have the _main_ method, select the `DemoApplication` class and go
     4. ![](images/Imagen4.png)
 
-## Ejercicio 2. Parte Web
+## Exercise 2. Web part
 
 > En este ejercicio vamos a configurar las dependencias para convertir el proyecto en un proyecto web y poder trabajar con los componentes de la capa de control.
 
