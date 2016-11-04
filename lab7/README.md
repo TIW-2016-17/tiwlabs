@@ -154,12 +154,12 @@ public class DemoApplication {
 
 ### What has happened
 
-1. When you note down a class as `@Controller` automatically stop being a regular class to convert in a web controller that is able to recibe objects `request` and `response`
+1. When you note down a class as `@Controller` automatically stop being a regular class to convert in a web controller that is able to receive objects `request` and `response`
 2. SpringBoot scans all the classpath searching noted class and load them directly.
 3. `@RequestMapping` define the input URL, as well as every parameters and atributes asociated to the `HttpServletRequest` object
-4. `@ResponseBody` allow to modify the `HttpServletResponse` object in this case the return`String` type it is converted in the response body therefore the _"Hi"_ string will be transmited implicitly with the _text/plain_ header
+4. `@ResponseBody` allow to modify the `HttpServletResponse` object in this case the return`String` type it is converted in the response body therefore the _"Hi"_ string will be transmitted implicitly with the _text/plain_ header
 5. When the application is started, SpringBoot generate every artifact so that the application show up with an embedded tomcat and the   _demo_ project as the default context, therefore you shouldn't go to _http://localhost:8080/demo/greet_, just   _http://localhost:8080/greet_
-    6. The full URL with the context should be done in case we deployed in a external server (like Glassfish) that is able to keer many contexts.
+    6. The full URL with the context should be done in case we deployed in a external server (like Glassfish) that is able to keep many contexts.
 
 ### Transform in a WAR
 
