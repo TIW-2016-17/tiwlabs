@@ -110,9 +110,9 @@ public class DemoApplication {
 
 ## Exercise 2. Web part
 
-> En este ejercicio vamos a configurar las dependencias para convertir el proyecto en un proyecto web y poder trabajar con los componentes de la capa de control.
+> In this exercise we are going to configure dependencies to convert the project in a web project to be able to work with the components of the control layer. 
 
-- Modifica el siguiente código en el fichero __pom.xml__
+- Modify the following code in the __pom.xml__ file
 
 ```xml
         <dependency>
@@ -121,7 +121,7 @@ public class DemoApplication {
         </dependency>
 ```
 
-- Por este otro:
+- By this one:
 
 ```xml
         <dependency>
@@ -130,29 +130,29 @@ public class DemoApplication {
         </dependency>
 ```
 
-- Guarda los cambios.
-- Crea una nueva clase (normal, no un serlvet) `es.uc3m.tiw.controllers.MiPrimerController`  
-- Anota la clase con la anotación `@Controller` (tendrás que importarla). Esto identifica a la clase como un componente web para Springframework
-- Crea un método `String saludar()` que devuelva una cadena.
-- Anota el método con la anotación `@RequestMapping("/saludo")`. Esta anotación definirá la URL de acceso
-- Anota el tipo de retorno como `@ResponseBody`. Esta anotación definirá el cuerpo de la respuesta
-- La clase debería quedar tal que así:
+- Save the changes.
+- Create a new class (regular class, not a serlvet) `es.uc3m.tiw.controllers.MyFirstController`  
+- Note down the class with the `@Controller` anotation (you have to import it). This identify the class as a web component for Springframework
+- Create a `String greet()` method that return a String.
+- Note down the method with the `@RequestMapping("/greet")` annotation. This anotation will define the access URL
+- Note down the return type as `@ResponseBody`. This annotation will define the response body
+- The class shoud be like this:
 
 ```java
     @Controller
-    public class MiPrimerController {
+    public class MyFirstController {
 
-        @RequestMapping("/saludos")
-        public @ResponseBody String saludos(){
-            return "Hola";
+        @RequestMapping("/greet")
+        public @ResponseBody String greet(){
+            return "Hi";
         }
     }
 ```
 
-- Ejecuta la aplicación y lanza el navegador a la dirección: [http://localhost:8080/saludos]()
-    - Recibirás el mensaje _Hola_ por pantalla
+- Execute the application and launch the web browser to the address: [http://localhost:8080/greet]()
+    - You will recibe the message _Hi_ in the screen.
 
-### ¿Que ha ocurrido?
+### What has happened
 
 1. Al anotar una clase como `@Controller` automáticamente deja de ser una clase corriente para convertirse en un controlador web que es capaz de recibir objetos `request` y `response`
 2. SpringBoot escanea todo el classpath buscando clases anotadas y las carga directamente
@@ -221,7 +221,7 @@ public class DemoApplication extends SpringBootServletInitializer{
 3. Inicia la aplicación y lanza el navegador a la siguiente URL: [http://localhost:8080/params/david/22]()
 4. Obtendrás un mensaje del tipo: _"Los parámetros son david y 22"_
 
-### ¿Que ha ocurrido?
+### What has happened
 
 - En el `@RequestMapping` se define la estructura de la URL y se indica mediante llaves `{variable}` que habrá una serie de parámetros con valor variable.
 - Estos nombres de variables deben coincidir con los que recibe el método
@@ -285,7 +285,7 @@ public class DemoApplication extends SpringBootServletInitializer{
 - Lanza de nuevo la aplicacion y el navegador a la dirección: [http://localhost:8080/saludos/david]()
     - Obtendrás el mensaje: _"Hola david desde una página thymeleaf"_
 
-### ¿Que ha ocurrido?
+### What has happened
 
 - Si eliminamos la anotación `@ResponseBody` SpringBoot entiende que el tipo de retorno, si es un String, se trata de una vista y no del cuerpo de la respuesta como anteriormente.
 - Si la respuesta es una vista, SpringBoot usará el componente `ViewResolver` que tenga configurado (puede ser JSP, Freemarker, Velocity, etc.), en este caso es __Thymeleaf__ y la configuración por defecto buscará las páginas en el directorio _templates_
@@ -418,7 +418,7 @@ public class DemoApplication extends SpringBootServletInitializer{
     }
 ```
 
-### ¿Que ha ocurrido?
+### What has happened
 
 > De nuevo si Spring puede convertir algo lo hará. En este caso no devolvemos una página, ni un `String`, devolvemos un objeto `Usuario`que internamente contiene una colección de objetos `Direccion`.
 > SpringBoot está configurado automáticamente para devolver este tipo de objetos como documentos JSON.
@@ -547,7 +547,7 @@ public interface UsuarioDao extends CrudRepository<Usuario, Long> {
 </usuario>
 ```
 
-### ¿Que ha ocurrido?
+### What has happened
 
 > Un montón de cosas:
 > - La dependencia `spring-boot-starter-data-jpa` ha descargado `hibernate` y `javax.persistence`, ha configurado la unidad de persistencia y el `DataSource` y nos permite trabajar con anotaciones JPA haciendo uso del proyecto __SpringData__
@@ -672,7 +672,7 @@ public interface UsuarioDao extends CrudRepository<Usuario, Long> {
 
 4. Si usas [ARC](https://advancedrestclient.com/) o un plugin que permita la navegación por JSON, como  [JSON formatter](https://github.com/callumlocke/json-formatter) podrás hacer clic en el enlace anterior y verás cada una de las direcciones asociadas a este usuario, que también son navegables mediante enlaces generados.
 
-### ¿Que ha ocurrido?
+### What has happened?
 
 - Spring-Data-REST permite exponer los repositorios directamente como servicios REST.
 - Esto permite realizar operaciones CRUD facilmente mediante los métodos HTTP
@@ -681,7 +681,7 @@ public interface UsuarioDao extends CrudRepository<Usuario, Long> {
 
 ---
 
-## Referencias
+## References
 
 - <b id="f1">1</b>: [SpringBoot](http://projects.spring.io/spring-boot/) [↩](#a1)
 - <b id="f2">2</b>: [SpringFramework](http://spring.io) [↩](#a2)
