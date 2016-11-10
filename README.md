@@ -55,7 +55,7 @@ The most basic uses of this type of project components and multicarrier shown.
 
 An approach to the development model based on _inversión Control_ and news JEE7
 
-### Lab5. JBoss Forge
+### [Lab5. JBoss Forge](https://github.com/TIW-2016-17/tiwlabs/blob/master/lab5)
 
 Once you know the model of development with JEE components in this laboratory is shown how to accelerate development with JBoss Forge tool.
 
@@ -63,7 +63,7 @@ Once you know the model of development with JEE components in this laboratory is
 
 Sample exercises for such services.
 
-### Lab7. SpringBoot
+### [Lab7. SpringBoot](https://github.com/TIW-2016-17/tiwlabs/blob/master/lab7)
 
 Samples of use and concepts under the SpringBoot tool microservices
 
