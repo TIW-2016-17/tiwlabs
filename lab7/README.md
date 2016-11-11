@@ -205,7 +205,7 @@ public class DemoApplication extends SpringBootServletInitializer{
 - Launch the web browser and go to  _http://localhost:8080/greet and it will return a 404 error page.
 - Try again with the new address [http://localhost:8080/demo/greet]() and you will see the response string.
 
-## Ejercicio 3. Parameters
+## Exercise 3. Parameters
 
 > In this exercise we are coing to see how to recibe parameters from the client .
 
@@ -233,15 +233,15 @@ public class DemoApplication extends SpringBootServletInitializer{
     - If is not possible to carry out the conversion, for example if is introduce age in a not numeric String, the server will return a __406 Not Acceptable Response__ error 
 > You can obtain more information about passing parameters in __RequestMapping__  documentation <sup id="a12">[12](#f12)</sup>.
 
-## Ejercicio 4. Vistas
+## Exercise 4. Views
 
-> SpringBoot puede trabajar con JSPs y con plantillas como Tiles <sup id="a8">[8](#f8)</sup>, Velocity <sup id="a11">[11](#f11)</sup>, Freemarker <sup id="a9">[9](#f9)</sup> o Thymeleaf <sup id="a10">[10](#f10)</sup>.
+> SpringBoot can work with JSPs and templates like Tiles <sup id="a8">[8](#f8)</sup>, Velocity <sup id="a11">[11](#f11)</sup>, Freemarker <sup id="a9">[9](#f9)</sup> or Thymeleaf <sup id="a10">[10](#f10)</sup>.
 > 
-> __Thymeleaf__ es un framework de templates cuya ventaja principal es que puede usarse sin necesidad de correr en un servidor de aplicaciones, por lo que se puede obtener una visión del aspecto de interfaz gráfico sin necesidad de incorporar datos desde el servidor.
-> Usa una sintaxis muy parecida a JSP y taglibs JSTL, por lo que el salto desde el desarrollo JSP+JSTL es muy rápido.
+> __Thymeleaf__ is a template framework which their best advantage is that it can be use without the need or running on a application server, so it is possible to obtain a vision about the graphical interface aspect without the need of incorporate data from the server.
+> It uses a sintasix very similar to JSP and taglibs JSTL, consequently the leap from JSP+JSTL development is very fast.
 
-1. Abre el __pom.xml__ e incorpora el siguiente código dentro de la sección _dependencies_
-2. Guarda los cambios.
+1. Open __pom.xml__ file and add the following code inside the _dependencies_ section
+2. Save the changes.
 ```xml
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -249,45 +249,44 @@ public class DemoApplication extends SpringBootServletInitializer{
         </dependency>
 ```
 
-1. Crea un nuevo _folder_ en `src/main/resources` y llámalo __templates__
-2. Dentro crea un nuevo fichero vacío con nombre __hola.html__
-3. Escribe el siguiente código:
+1. Create a new _folder_ in `src/main/resources` and name it __templates__
+2. Inside the folder, create a new empty file called __hello.html__
+3. Write the folling code:
 
 ```html
 <!DOCTYPE html>
 <html>
 <body>
     <p>
-        Hola <span th:text="${name}">el-nombre-va-aquí</span> desde una página
-        Thymeleaf
+        Hi <span th:text="${name}">name-goes-here</span> from the Thymeleaf page
     </p>
 </body>
 </html>
 ```
 
-> __Observa lo siguiente:__ El código es html normal, pero dentro de la etiqueta `<span>` se ha introducido código thymeleaf que lo que hará es sustituir la cadena _"el-nombre-va-aquí"_ por el parámetro _name_ que se le pase en el _request_ en el caso de que exista. En caso contrario se mantendrá la cadena dentro del _span_. 
+> __Note the following:__ Html code is normal, but inside the `<span>` tag it has been introducing thymeleaf code that will replace the string _"name-goes-here"_ by the _name_ parameter that is sent in the _request_ in case it exists. Otherwise it will keep the String inside the _span_ tag. 
 
-1. Modifica el método `saludos()` de la clase `MiPrimerController` para que reciba un parámetro _"nombre"_ de tipo `String`.
-2. El método debe pedir a Spring un objeto `org.springframework.ui.Model` donde se insertará el nombre recibido y se reenviará ese "modelo" a la página para que obtenga el nombre.
-    3. El nombre del parámetro insertado en el objeto model se llamará _"name"_.
-4. Quita la anotación `@ResponseBody`
-5. en el `return` escribe la cadena _"hola"_ (minúsculas).
-3. El código es el siguiente:
+1. Modify the `greet()` method from the `MiPrimerController` to receive a _"name"_ parameter of `String` type.
+2. The method should request a `org.springframework.ui.Model` Spring object where the name received will be inserted and will be forward to that "model" to the page that have the same name.
+    3. The parameter inserted in the model object will be called _"name"_.
+4. Take out the `@ResponseBody` annotation
+5. In the `return` write the _"hi"_ String (in lowercase).
+3. The code is the following:
 
 ```java
-    @RequestMapping("/saludos/{nombre}")
-    public String saludos(Model modelo, @PathVariable String nombre){
-        modelo.addAttribute("name", nombre);
-        return "hola";
-    }
+	@RequestMapping("/greet/{name}")
+	public @ResponseBody String greet(Model model, @PathVariable String name){
+		model.addAttribute("name", name);
+		return "Hi";
+	}
 ```
 
-- Lanza de nuevo la aplicacion y el navegador a la dirección: [http://localhost:8080/saludos/david]()
-    - Obtendrás el mensaje: _"Hola david desde una página thymeleaf"_
+- Launch the application again and open the address: [http://localhost:8080/greet/john]() in your browser.
+    - you will receive the following message: _"Hi john from from the Thymeleaf page"_
 
 ### What has happened
 
-- Si eliminamos la anotación `@ResponseBody` SpringBoot entiende que el tipo de retorno, si es un String, se trata de una vista y no del cuerpo de la respuesta como anteriormente.
+- If we eliminate the  `@ResponseBody` annotation SpringBoot understand that the return type, if is a String, is a view and not the reponse body like before.
 - Si la respuesta es una vista, SpringBoot usará el componente `ViewResolver` que tenga configurado (puede ser JSP, Freemarker, Velocity, etc.), en este caso es __Thymeleaf__ y la configuración por defecto buscará las páginas en el directorio _templates_
 - La cadena de retorno será el nombre de la página. Así si devolvemos "hola", SpringBoot devolverá la página _"templates/hola.html"_. Si devolviéramos "app/hola", SpringBoot buscaría la página _"templates/app/hola.html"_
 - SpringBoot usa el patrón __MVC__ y entiende que si hay una página como vista, entonces se le puede pasar un modelo. El objeto `Model` es un objeto que automáticamente se envía a la vista especificada en el `return` y cualquier atributo que metamos allí será recibido por la página.
