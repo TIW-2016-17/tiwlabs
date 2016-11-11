@@ -163,19 +163,20 @@ public class DemoApplication {
 
 ### Transform in a WAR
 
-> Esta parte es opcional y se muestra como ejemplo en el caso de que queramos usar un flujo de trabajo más tradicional desplegando en un servidor de aplicaciones.
+> This part is optional and is shown as an example in case we wanted to use a more traditional workflow deploying in an application server.
 
-1. Abre el fichero __pom.xml__ y localiza el siguiente código `<packaging>jar</packaging>` cambia el valor de _jar_ por _war_
-2. Abre la clase `DemoApplication` y haz que herede de `org.springframework.boot.web.support.SpringBootServletInitializer`
-3. Sobreescribe el método `configure`.
-4. La clase debería quedar así:
+
+1. Open the __pom.xml__ file and localize the following line of code `<packaging>jar</packaging>` change the value of _jar_ by _war_
+2. Open `DemoApplication` class and make it inherit from `org.springframework.boot.web.support.SpringBootServletInitializer`
+3. Override the `configure` method.
+4. The class should remain like this:
 
 ```java
 @SpringBootApplication
 public class DemoApplication extends SpringBootServletInitializer{
 
     /**
-     * Usado cuando es un JAR
+     * Used when is a JAR
      * @param args
      */
     public static void main(String[] args) {
@@ -183,7 +184,7 @@ public class DemoApplication extends SpringBootServletInitializer{
     }
     
     /**
-     * Usado cuando es un WAR
+     * Used when is a WAR
      */
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -193,45 +194,44 @@ public class DemoApplication extends SpringBootServletInitializer{
 }
 ```
 
-> __Aparecerá un error__ en rojo en el proyecto y en la pestaña _problems_ indicando que el proyecto no está actualizado (not up-to-date). Esto es debido a que hemos cambiado configuración en el pom.xml
+> __An error will show up__ in red in the project and the _problems_ tab will indicate that the project is not up-to-date. This is caused because we have changed the pom.xml configuration file.
 > 
-> Para solucionarlo simplemente haz clic derecho sobre el proyecto y selecciona: __Maven->Update Project__
+> To fix it just right click the project and select : __Maven->Update Project__
 
-> __NOTA:__ Antes de poder desplegar en un servidor es necesario eliminar las configuraciones CloudFoundry <sup id="a7">[7](#f7)</sup>. Para ello pulsa con el botón derecho sobre el proyecto y elige: __configure->Disable as Cloud Foundry APP__
+> __NOTE:__ Before being able to deploy in a server is necessary to eliminate the CloudFoundry configurations  <sup id="a7">[7](#f7)</sup>. To do this press right button  the project and choose: __configure->Disable as Cloud Foundry APP__
 
-- Arranca un servidor (puede ser Glassfish o Pivotal tc Server, que es un tomcat modificado)
-- Despliega la aplicación en el servidor. Verás las mismas trazas por consola que anteriormente.
-- Lanza un navegador a la dirección _http://localhost:8080/saludos_ y te devolverá un código 404.
-- Prueba de nuevo con la nueva dirección [http://localhost:8080/demo/saludos]() y verás la cadena de respuesta.
+- Launch the server (can be Glassfish or Pivotal tc Server, the later is a tomcat modified)
+- Deploy the application in the server. You will see the same messages in the console than before .
+- Launch the web browser and go to  _http://localhost:8080/greet and it will return a 404 error page.
+- Try again with the new address [http://localhost:8080/demo/greet]() and you will see the response string.
 
-## Ejercicio 3. Parametros
+## Ejercicio 3. Parameters
 
-> En este ejercicio vamos a ver como recibir parámetros desde el cliente.
+> In this exercise we are coing to see how to recibe parameters from the client .
 
-1. Crea un nuevo método llamado __parametros__ que admita dos atributos uno de tipo `String` y otro de tipo `int`.
-2. Resuelve el código de la siguiente manera:
+1. Create a new method called __parameters__ that recive two parameters, a `String` and an `int`.
+2. Resolve the code in this way:
 
 ```java
-    @RequestMapping("/params/{nombre}/{edad}")
-    public @ResponseBody String parametros(@PathVariable String nombre, @PathVariable int edad){
-        return "Los parámetros son: "+nombre+" y "+edad;
+    @RequestMapping("/params/{name}/{age}")
+    public @ResponseBody String parameters(@PathVariable String name, @PathVariable int age){
+        return "Parameters are: "+name+" & "+age;
     }
 ```
 
-3. Inicia la aplicación y lanza el navegador a la siguiente URL: [http://localhost:8080/params/david/22]()
-4. Obtendrás un mensaje del tipo: _"Los parámetros son david y 22"_
+3. Launch the application and launch the web browser the following URL: [http://localhost:8080/params/john/22]()
+4. You will recive a message similar to this: _"Parameters are john & 22"_
 
 ### What has happened
 
-- En el `@RequestMapping` se define la estructura de la URL y se indica mediante llaves `{variable}` que habrá una serie de parámetros con valor variable.
-- Estos nombres de variables deben coincidir con los que recibe el método
-- La anotación `@PathVariable` le indica a SpringBoot que los parámetros serán recibidos mediante su posición en la URI.
-    - Otra opción sería usar un `QUERY_STRING` tradicional con la anotación `@RequestParam`
-- Spring realiza automáticamente la conversión de los tipos recibidos a los esperados. Por ejemplo la _edad_ se recibe como String (todo lo que viene por HTTP es en formato de cadena) y se convierte automáticamente a int.
-    - Spring realiza la conversión de tipos automáticamente si puede. Eso incluye tipos complejos como colecciones, arrays, listas, objetos propios, etc.
-    - Si no se puede convertir, por ejemplo en la edad se introduce una cadena no numérica, el servidor devolverá un error __406 petición incorrecta__
-
-> Puedes obtener más información de paso de parámetros en la documentación de __RequestMapping__ <sup id="a12">[12](#f12)</sup>.
+- In `@RequestMapping` it is defined the URL structure and it is indicated by braces `{variable}` that it will be a series of parameters with a variable value.
+- This variable names have to coincide with the ones that the method receive
+- `@PathVariable` annotation indicate to SpringBoot that parameters will be received throught their position in the URI.
+    - Another option should be use a traditional `QUERY_STRING` with the  `@RequestParam` annotation
+- Spring carries out automatically the conversion of the received types to the expected. For instance, _age_ it is received as a String (everything coming by HTTP is in String format) and is converted automatically in a int.
+    - Spring carries out the automatically conversion if is possible. That include complex types like collections, arrays, lists, own objects, etc.
+    - If is not possible to carry out the conversion, for example if is introduce age in a not numeric String, the server will return a __406 Not Acceptable Response__ error 
+> You can obtain more information about passing parameters in __RequestMapping__  documentation <sup id="a12">[12](#f12)</sup>.
 
 ## Ejercicio 4. Vistas
 
