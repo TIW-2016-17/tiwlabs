@@ -1,33 +1,33 @@
-# Lab6. Servicios RESTful
+# Lab6. RESTful Services
 
 <!-- MarkdownTOC -->
 
 - [REST Software](#rest-software)
-- [Ejercicio1. Configuración](#ejercicio1-configuración)
-- [Ejercicio2. Creacion del servicio](#ejercicio2-creacion-del-servicio)
-- [Ejercicio3. Paso de parámetros](#ejercicio3-paso-de-parámetros)
-- [Ejercicio4. POST y documentos](#ejercicio4-post-y-documentos)
-- [Ejercicio5. JSON](#ejercicio5-json)
+- [Exercise1. Configuration](#exercise1-configuration)
+- [Exercise2. Service creation](#exercise2-service-creation)
+- [Exercise3. Paso de parámetros](#exercise3-paso-de-parámetros)
+- [Exercise4. POST y documentos](#exercise4-post-y-documentos)
+- [Exercise5. JSON](#exercise5-json)
 - [Forge](#forge)
 
 <!-- /MarkdownTOC -->
 
 ## REST Software
 
->Necesitas un software que permita usar métodos de conexión distintos a GET y POST, por lo que puedes usar el software autónomo __REStClient__ de [http://www.wiztools.org]() o bien instalar un plugin para Chromium llamado __Advanced REST Client__
+>You need a software that allow you to use connection methods different to GET and POST, therefor you can use the third party software __REStClient__ from [http://www.wiztools.org]() either install the Chromium plugin __Advanced REST Client__
 
-1. Abre Chromium  y accede a la webstore [https://chrome.google.com/webstore/category/extensions?hl=en-US]()
-2. Busca la extensión __Advanced REST Client__ e instálala.
+1. Open Chromium and access to the webstore [https://chrome.google.com/webstore/category/extensions?hl=en-US]()
+2. Find the __Advanced REST Client__ extension and install it.
 3. ![](images/Imagen1.png)
 
-## Ejercicio1. Configuración
+## Exercise1. Configuration
 
-> En este ejercicio vamos a crear la inftaestructura REST usando la librería __jersey__([https://jersey.java.net/]()) que ya está instalada en las dependencias del proyecto y en Glassfish/Payara.
+> In this exercise we are going to create the REST infrastructure using the  __jersey__([https://jersey.java.net/]()) library that is already installed in the project dependencies and in Glassfish/Payara.
 > 
-> - Es necesario primero crear una clase de configuración que establezca el path de consulta para devolver documentos con peticiones GET, POST, PUT y DELETE.
-> - la Url según esta configuración será `http://localhost:8080/laboratorios/rest/`
+> - First, it is necessary to create a configuracion class that stablish the query path to return documents with  GET, POST, PUT y DELETE petitions.
+> - The Url according to this configuration will be `http://localhost:8080/laboratorios/rest/`
 
-1. Crea una nueva estructura de paquetes:
+1. Create a new package structure:
 
 ```
     es.uc3m.tiw.lab6
@@ -35,8 +35,8 @@
                   ../rest
 ```
 
-2. Crea una nueva clase `es.uc3m.tiw.lab6.config.ApplicationConfig` que herede de `import javax.ws.rs.core.Application`
-3. El código que debe contener es el siguiente:
+2. Create a new `es.uc3m.tiw.lab6.config.ApplicationConfig` class than inherit from`import javax.ws.rs.core.Application`
+3. The code it should contain is as follows
 
 ```java
 @ApplicationPath("rest")
@@ -56,38 +56,39 @@ public class ApplicationConfig extends Application {
 }
 ```
 
-## Ejercicio2. Creacion del servicio
+## Exercise2. Service creation
 
-> En la clase de configuración anterior le pasamos la clase `EjemploService.class`, en este ejercicio vamos a crearla.
+> In the previous configuration class we passed the  `ServiceExample.class` class, in this exercise we are going to create it.
 > 
-> Esta clase definirá el acceso al servicio estableciendo las URLs.
+> this class will define access to the service by setting the URLs
 > 
-> - La URL será: `http://localhost:8080/laboratorios/rest/ejemplo/prueba/...`
+> - the URL will be: `http://localhost:8080/laboratorios/rest/example/test/...`
 > 
 
-1. Crea una nueva clase `es.uc3m.tiw.lab6.rest.EjemploService`
-2. Incorpora la anotación _path_ con la ruta _ejemplo_
-    3. `@Path("ejemplo")`
-4. Crea un método `getText()` que devuelva un `String` que solamente se pueda acceder por `GET` que el contenido que devuelva sea `Texto plano` y que la ruta de acceso sea `/prueba`. El código debería parecerse al siguiente:
+1. Create a new `es.uc3m.tiw.lab6.rest.ServiceExample` class
+2. Incorporate the _path_ notation with the path _example_
+    3. `@Path("example")`
+4. Create a  `getText()` method that return a `String` that only can be access by `GET`, the return content is a `plain text` and the access path will be `/test`. The code should resemble the following:
+
 
 ```java
 @GET
-        @Path("prueba")
+        @Path("test")
         @Produces(MediaType.TEXT_PLAIN)
         public String getText() {
-            return "Todo OK";
+            return "Eveything OK";
         }
 ```
-5. Lanza el navegador a la URL: [http://localhost:8080/laboratorios/rest/ejemplo/prueba]() y la respuesta obtenida debería ser: __Todo Ok__
+5. Launch the browser to the URL: [http://localhost:8080/laboratorios/rest/example/test() and the response obtained should be: __Eveything Ok__
 
-## Ejercicio3. Paso de parámetros
+## Exercise3. Parameter passing
 
 > en este ejercicio hay que hacer uso de las anotaciones `@PathParam` y `@QueryParam` para permitir el paso de parámetros mediante la URL.
 
 1. Crea un nuevo método que admita dos parámetros por URI y devuelva un mensaje con dichos parámetros en texto plano. La URL de acceso será: [http://localhost:8080/laboratorios/rest/ejemplo/prueba/10/hola]()
 2. Crea otro método que admita dos parámetros pero de una forma más clásica mediante `QUERY_STRING` y devuelva un mensaje en texto plano con dichos parámetros. La URL será: [http://localhost:8080/laboratorios/rest/ejemplo/prueba/query?numero=10&palabra=hola]()
 
-## Ejercicio4. POST y documentos
+## Exercise4. POST y documentos
 
 > En este ejercicio vamos a probar a usar otros métodos de conexión distintos del `GET`, en concreto `POST`. 
 > El ejercicio consistirá en escribir un método que admita 2 parámetros mediante POST, lo reciba y cree un objeto `Usuario` con dichos parámetros y deluelva el objeto Usuario como documento `XML`.
@@ -111,7 +112,7 @@ public class ApplicationConfig extends Application {
 11.  Cuando pulses sobre el botón <kbd>SEND</kbd> obtendrás una respuesta en formato XML
     12.  ![](images/Imagen3.png)
 
-## Ejercicio5. JSON
+## Exercise5. JSON
 
 > En este ejercicio se propone devolver un documento JSON del `Usuario` con los mismos valores (edad y nombre) pero esta vez pasados por un formulario.
 > 
