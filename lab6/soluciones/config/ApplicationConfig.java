@@ -23,7 +23,7 @@ public class ApplicationConfig extends Application {
     private Set<Class<?>> getRestClasses() {
 		Set<Class<?>> resources = new java.util.HashSet<Class<?>>();
 		
-		resources.add(es.uc3m.tiw.lab6.rest.EjemploService.class);
+		resources.add(es.uc3m.tiw.lab6.rest.ServiceExample.class);
 		return resources;    
     }
 }
