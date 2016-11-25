@@ -59,7 +59,7 @@ An approach to the development model based on _inversión Control_ and news JEE7
 
 Once you know the model of development with JEE components in this laboratory is shown how to accelerate development with JBoss Forge tool.
 
-### Lab6. REST services
+### [Lab6. REST services](https://github.com/TIW-2016-17/tiwlabs/tree/master/lab6)
 
 Sample exercises for such services.
 
