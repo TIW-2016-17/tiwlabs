@@ -110,7 +110,7 @@ public class ApplicationConfig extends Application {
     9.  Invokes the access address by setting the method to `POST`
     10.  ![](images/Imagen2.png)
 11.  When you push on the <kbd>SEND</kbd> button you will get the respone in XML format
-    12.  ![](images/Imagen3.png)
+    12.  ![](images/Imagen3Eng.png)
 
 ## Exercise5. JSON
 
@@ -124,7 +124,7 @@ public class ApplicationConfig extends Application {
 6. Configure it to send the encoded data as a form
     7. ![](images/Imagen4.png)
 8. You will get an answer like this:
-    9. ![](images/Imagen5.png)
+    9. ![](images/Imagen5Eng.png)
 
 ## Forge
 
