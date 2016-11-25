@@ -48,10 +48,11 @@ public class User {
 		super();
 		this.name = name;
 		this.lastName = lastName;
-		this.usuario = usuario;
+		this.
+			= user;
 		this.password = password;
 	}
-	public USer(String user, String password) {
+	public User(String user, String password) {
 		super();
 		this.user = user;
 		this.password = password;
@@ -60,7 +61,7 @@ public class User {
 	 * @param age
 	 * @param name2
 	 */
-	public Usuario(Integer edad, String name) {
+	public User(Integer age, String name) {
 		this.setEdad(age);
 		this.name = name;
 	}
