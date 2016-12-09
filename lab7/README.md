@@ -275,9 +275,9 @@ public class DemoApplication extends SpringBootServletInitializer{
 
 ```java
 	@RequestMapping("/greet/{name}")
-	public @ResponseBody String greet(Model model, @PathVariable String name){
+	public String greet(Model model, @PathVariable String name){
 		model.addAttribute("name", name);
-		return "Hi";
+		return "hello";
 	}
 ```
 
